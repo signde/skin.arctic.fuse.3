@@ -752,6 +752,11 @@ msgctxt "#31163"
 msgid "Combined Flyer"
 msgstr ""
 
+#: /1080i/Includes_Views_Row.xml
+msgctxt "#31164"
+msgid "Row Placard"
+msgstr ""
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31165"
 msgid "On pause"
@@ -780,6 +785,11 @@ msgstr ""
 #: /1080i/SkinSettings.xml
 msgctxt "#31171"
 msgid "On-screen keyboard size"
+msgstr ""
+
+#: /1080i/Includes_Actions.xml
+msgctxt "#31172"
+msgid "Placard"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -2450,7 +2460,7 @@ msgstr ""
 
 #: /1080i/Dialog_DialogShortcuts.xml
 msgctxt "#31638"
-msgid "Type"
+msgid "Hub type"
 msgstr ""
 
 #: /1080i/Dialog_DialogShortcuts.xml
@@ -3487,295 +3497,370 @@ msgctxt "#31876"
 msgid "Filter the skin settings by tag."
 msgstr ""
 
-msgctxt "#31877"
-msgid "Choose the style of the search results of each content type. Content types set to Default and results without a content type use the Default style."
+msgctxt "#31900"
+msgid "Display mode"
 msgstr ""
 
-msgctxt "#31878"
+msgctxt "#31901"
+msgid "Video mode"
+msgstr ""
+
+msgctxt "#31902"
+msgid "Color space"
+msgstr ""
+
+msgctxt "#31903"
+msgid "Mb/s"
+msgstr ""
+
+msgctxt "#31904"
+msgid "Video bit depth"
+msgstr ""
+
+msgctxt "#31905"
 msgid "Decoder"
 msgstr ""
 
-msgctxt "#31879"
+msgctxt "#31906"
+msgid "VS10 | VP mode"
+msgstr ""
+
+msgctxt "#31907"
+msgid "Processing"
+msgstr ""
+
+msgctxt "#31908"
+msgid "Video queue"
+msgstr ""
+
+msgctxt "#31909"
+msgid "Video queue data"
+msgstr ""
+
+msgctxt "#31910"
+msgid "Audio queue"
+msgstr ""
+
+msgctxt "#31911"
+msgid "Audio queue data"
+msgstr ""
+
+msgctxt "#31912"
+msgid "Kb/s"
+msgstr ""
+
+msgctxt "#31913"
+msgid "Playback time"
+msgstr ""
+
+msgctxt "#31914"
+msgid "Processor"
+msgstr ""
+
+msgctxt "#31915"
+msgid "Metadata"
+msgstr ""
+
+msgctxt "#31916"
+msgid "Profile"
+msgstr ""
+
+msgctxt "#31917"
+msgid "Level"
+msgstr ""
+
+msgctxt "#31918"
+msgid "RPU"
+msgstr ""
+
+msgctxt "#31919"
+msgid "Base Layer"
+msgstr ""
+
+msgctxt "#31920"
+msgid "Enhancement Layer"
+msgstr ""
+
+msgctxt "#31921"
+msgid "CMv2.9 -> CMv4.0"
+msgstr ""
+
+msgctxt "#31922"
+msgid "Metadata"
+msgstr ""
+
+msgctxt "#31923"
+msgid "Output format"
+msgstr ""
+
+msgctxt "#31924"
+msgid "Aspect ratio"
+msgstr ""
+
+msgctxt "#31925"
+msgid "HDR10 MDL"
+msgstr ""
+
+msgctxt "#31926"
+msgid "HDR10 MaxCLL/FALL"
+msgstr ""
+
+msgctxt "#31927"
+msgid "Media source"
+msgstr ""
+
+msgctxt "#31928"
+msgid "Unknown"
+msgstr ""
+
+msgctxt "#31929"
+msgid "On"
+msgstr ""
+
+msgctxt "#31930"
+msgid "Off"
+msgstr ""
+
+msgctxt "#31931"
+msgid "Deinterlacing"
+msgstr ""
+
+msgctxt "#31932"
+msgid "Player cache"
+msgstr ""
+
+msgctxt "#31933"
+msgid "N/A"
+msgstr ""
+
+msgctxt "#31934"
+msgid "Memory usage"
+msgstr ""
+
+msgctxt "#31935"
+msgid "Passthrough"
+msgstr ""
+
+msgctxt "#31936"
+msgid "AML FPS"
+msgstr ""
+
+msgctxt "#31937"
+msgid "Dolby Vision"
+msgstr ""
+
+msgctxt "#31938"
+msgid "Metadata"
+msgstr ""
+
+msgctxt "#31939"
+msgid "HDR Static Metadata"
+msgstr ""
+
+msgctxt "#31940"
+msgid "cd/m²"
+msgstr ""
+
+msgctxt "#31941"
+msgid "RPU MDL"
+msgstr ""
+
+msgctxt "#31942"
+msgid "RPU MaxCLL/FALL"
+msgstr ""
+
+msgctxt "#31943"
+msgid "FLL MIN / MAX / Ø"
+msgstr ""
+
+msgctxt "#31944"
+msgid "PQ  MIN / MAX / Ø"
+msgstr ""
+
+msgctxt "#31945"
+msgid "12-bit"
+msgstr ""
+
+msgctxt "#31946"
+msgid "Codec"
+msgstr ""
+
+msgctxt "#31947"
+msgid "Bitrate"
+msgstr ""
+
+msgctxt "#31948"
+msgid "VS10 status"
+msgstr ""
+
+msgctxt "#31951"
+msgid "Input"
+msgstr ""
+
+msgctxt "#31952"
+msgid "Audio language"
+msgstr ""
+
+msgctxt "#31953"
+msgid "Subtitle language"
+msgstr ""
+
+msgctxt "#31954"
+msgid "Video"
+msgstr ""
+
+msgctxt "#31955"
 msgid "Output"
 msgstr ""
 
-msgctxt "#31880"
-msgid "Adjust"
+msgctxt "#31956"
+msgid "Audio"
 msgstr ""
 
-msgctxt "#31881"
-msgid "Select whether the item details are shown as plain text or as pills."
+msgctxt "#31957"
+msgid "Top left"
 msgstr ""
 
-msgctxt "#31882"
-msgid "Pill"
+msgctxt "#31958"
+msgid "Top center"
 msgstr ""
 
-msgctxt "#31883"
-msgid "Choose which ratings are shown for episodes."
+msgctxt "#31959"
+msgid "Top right"
 msgstr ""
 
-#: /1080i/Dialog_DialogSelect.xml
-msgctxt "#31884"
-msgid "Anime"
+msgctxt "#31960"
+msgid "Codec logos (OSD)"
 msgstr ""
 
-#: /1080i/Dialog_DialogSubtitles.xml
-msgctxt "#31885"
-msgid "Change service"
+msgctxt "#31961"
+msgid "Codec logos (PlayerProcessInfo)"
 msgstr ""
 
-#: /1080i/Includes_Weather_Trend_UV.xml
-msgctxt "#31887"
-msgid "Very high"
+msgctxt "#31962"
+msgid "Codec logos (Start)"
 msgstr ""
 
-#: /1080i/Includes_Weather_Trend_UV.xml
-msgctxt "#31888"
-msgid "Moderate"
+msgctxt "#31963"
+msgid "Position of codec logos"
 msgstr ""
 
-#: /1080i/Includes_Weather_Trend_UV.xml
-msgctxt "#31889"
-msgid "Extreme"
+msgctxt "#31964"
+msgid "Original"
 msgstr ""
 
-#: /1080i/Custom_1138_Dialog_IconStyle.xml
-msgctxt "#31890"
-msgid "Icon style"
+msgctxt "#31965"
+msgid "VS10"
 msgstr ""
 
-#: /1080i/Custom_1138_Dialog_IconStyle.xml
-msgctxt "#31891"
-msgid "Orbit"
+msgctxt "#31966"
+msgid "Audio codec"
 msgstr ""
 
-#: /1080i/Custom_1138_Dialog_IconStyle.xml
-msgctxt "#31892"
-msgid "Filmstrip"
+msgctxt "#31967"
+msgid "L5 Active Offsets"
 msgstr ""
 
-#: /1080i/Custom_1138_Dialog_IconStyle.xml
-msgctxt "#31893"
-msgid "Reflection"
+msgctxt "#31968"
+msgid "Version"
 msgstr ""
 
-#: /1080i/Custom_1138_Dialog_IconStyle.xml
-msgctxt "#31894"
-msgid "Select how genres, studios, countries and items without artwork are shown."
+msgctxt "#31969"
+msgid "Bit depth"
 msgstr ""
 
-#: /1080i/Custom_1138_Dialog_IconStyle.xml
-msgctxt "#31895"
-msgid "Aperture"
+msgctxt "#31970"
+msgid "EOTF & Gamut"
 msgstr ""
 
-#: /1080i/Custom_1138_Dialog_IconStyle.xml
-msgctxt "#31896"
-msgid "Contour"
+msgctxt "#31971"
+msgid "- Duration"
 msgstr ""
 
-#: /1080i/Custom_1138_Dialog_IconStyle.xml
-msgctxt "#31897"
-msgid "Halftone"
+msgctxt "#31972"
+msgid "- Show path"
 msgstr ""
 
-#: /1080i/Custom_1138_Dialog_IconStyle.xml
-msgctxt "#31898"
-msgid "Blueprint"
+msgctxt "#31973"
+msgid "Artwork Style"
 msgstr ""
 
-#: /1080i/Custom_1138_Dialog_IconStyle.xml
-msgctxt "#31899"
-msgid "Sunburst"
+msgctxt "#31974"
+msgid "PlayerProcessInfo type"
 msgstr ""
 
-#: /1080i/Custom_1138_Dialog_IconStyle.xml
-msgctxt "#31900"
-msgid "Corner Arc"
+msgctxt "#31975"
+msgid "second"
 msgstr ""
 
-#: /1080i/Custom_1138_Dialog_IconStyle.xml
-msgctxt "#31901"
-msgid "Fan"
+msgctxt "#31976"
+msgid "- Show file name"
 msgstr ""
 
-#: /1080i/Custom_1138_Dialog_IconStyle.xml
-msgctxt "#31902"
-msgid "Reveal"
+msgctxt "#31977"
+msgid "Modern"
 msgstr ""
 
-#: /1080i/Custom_1138_Dialog_IconStyle.xml
-msgctxt "#31903"
-msgid "Wallpaper"
+msgctxt "#31978"
+msgid "Classic"
 msgstr ""
 
-#: /1080i/Dialog_DialogSetupWizard.xml
-msgctxt "#31904"
-msgid "Fullscreen rows without an info panel"
+msgctxt "#31979"
+msgid "Original"
 msgstr ""
 
-#: /shortcuts/skinvariables-skinsettings.json
-msgctxt "#31905"
-msgid "Show the next enabled rating in place of one that is unavailable, instead of only the first ratings in the list."
+msgctxt "#31980"
+msgid "VHS Art"
 msgstr ""
 
-#: /shortcuts/skinvariables-skinsettings.json
-msgctxt "#31906"
-msgid "Show the 3D tag in the item information for stereoscopic videos."
+msgctxt "#31981"
+msgid "Show file name in the version selection"
 msgstr ""
 
-#: /1080i/Dialog_DialogCustom.xml
-msgctxt "#31907"
-msgid "Flixart Visibility"
+msgctxt "#31982"
+msgid "Customise video osd"
 msgstr ""
 
-#: /1080i/Includes_Labels.xml
-msgctxt "#31908"
-msgid "One row of items below the details of the focused item."
+msgctxt "#31983"
+msgid "Customise video info"
 msgstr ""
 
-#: /1080i/Includes_Labels.xml
-msgctxt "#31909"
-msgid "Rows of items that fill the screen below a section heading."
+msgctxt "#31984"
+msgid "Show two-row information bar"
 msgstr ""
 
-#: /1080i/Includes_Labels.xml
-msgctxt "#31910"
-msgid "One row of items below the details of the focused item, with categories above the row."
+msgctxt "#31985"
+msgid "Disc Art"
 msgstr ""
 
-#: /1080i/Includes_Labels.xml
-msgctxt "#31911"
-msgid "Rows of items that fill the screen, with categories above them."
+msgctxt "#31986"
+msgid "Rotating disc"
 msgstr ""
 
-#: /1080i/Includes_Labels.xml
-msgctxt "#31912"
-msgid "Items show square artwork with labels below."
+msgctxt "#31987"
+msgid "Decoding"
 msgstr ""
 
-#: /1080i/Includes_Labels.xml
-msgctxt "#31913"
-msgid "Items show landscape artwork with labels below."
+msgctxt "#31988"
+msgid "System"
 msgstr ""
 
-#: /1080i/Includes_Labels.xml
-msgctxt "#31914"
-msgid "Items show poster artwork."
+msgctxt "#31989"
+msgid "Info line"
 msgstr ""
 
-#: /1080i/Includes_Labels.xml
-msgctxt "#31915"
-msgid "Items show round artwork."
+msgctxt "#31990"
+msgid "failed"
 msgstr ""
 
-#: /1080i/Includes_Labels.xml
-msgctxt "#31916"
-msgid "Items show wide board artwork."
+msgctxt "#31991"
+msgid "detected"
 msgstr ""
 
-#: /1080i/Includes_Labels.xml
-msgctxt "#31917"
-msgid "The focused item opens out into a wide card."
+msgctxt "#31992"
+msgid "skipped"
 msgstr ""
 
-#: /1080i/Includes_Labels.xml
-msgctxt "#31918"
-msgid "Items show poster artwork with labels over the bottom edge."
-msgstr ""
-
-#: /1080i/Includes_Labels.xml
-msgctxt "#31919"
-msgid "A list of items beside a large panel with the focused item's artwork."
-msgstr ""
-
-#: /1080i/Includes_Labels.xml
-msgctxt "#31920"
-msgid "A wide list of items beside the focused item's poster."
-msgstr ""
-
-#: /1080i/Includes_Labels.xml
-msgctxt "#31921"
-msgid "A list of items with artwork and a short plot, beside the focused item's poster."
-msgstr ""
-
-#: /1080i/Includes_Labels.xml
-msgctxt "#31922"
-msgid "A short list of items below the details of the focused item, beside its landscape artwork."
-msgstr ""
-
-#: /1080i/Includes_Labels.xml
-msgctxt "#31923"
-msgid "A short list of items below the details of the focused item, beside its landscape and poster artwork."
-msgstr ""
-
-#: /1080i/Includes_Labels.xml
-msgctxt "#31924"
-msgid "A list of items beside the focused item's square artwork."
-msgstr ""
-
-#: /1080i/Includes_Labels.xml
-msgctxt "#31925"
-msgid "A list of categories beside the items in the selected category, with artwork and a short plot."
-msgstr ""
-
-#: /1080i/Includes_Labels.xml
-msgctxt "#31926"
-msgid "Items with artwork and a short plot, with categories above them, beside the focused item's poster."
-msgstr ""
-
-#: /1080i/Dialog_DialogShortcuts.xml
-msgctxt "#31927"
-msgid "Play action"
-msgstr ""
-
-#: /1080i/Includes_Labels.xml
-msgctxt "#31928"
-msgid "Context menu"
-msgstr ""
-
-#: /1080i/Dialog_DialogShortcuts.xml
-msgctxt "#31929"
-msgid "Browse action"
-msgstr ""
-
-#: /1080i/Dialog_DialogShortcuts.xml
-msgctxt "#31930"
-msgid "Choose what happens when a playable library item in this hub's widgets is clicked."
-msgstr ""
-
-#: /1080i/Dialog_DialogShortcuts.xml
-msgctxt "#31931"
-msgid "Choose what happens when a library folder item, such as a show or album, in this hub's widgets is clicked."
-msgstr ""
-
-#: /1080i/Dialog_DialogShortcuts.xml
-msgctxt "#31932"
-msgid "Choose the shortcut, path, label, icon and submenu of this hub."
-msgstr ""
-
-#: /1080i/Dialog_DialogShortcuts.xml
-msgctxt "#31933"
-msgid "Menu"
-msgstr ""
-
-#: /shortcuts/builtins/skinvariables-hubs-action.json
-msgctxt "#31934"
-msgid "This hub"
-msgstr ""
-
-#: /shortcuts/builtins/skinvariables-hubs-action.json
-msgctxt "#31935"
-msgid "All hubs"
-msgstr ""
-
-#: /shortcuts/builtins/skinvariables-hubs-action.json
-msgctxt "#31936"
-msgid "Use this action for this hub only or for all hubs?"
-msgstr ""
-
-#: /1080i/Includes_DialogInfo.xml
-msgctxt "#31937"
-msgid "Department"
+msgctxt "#31993"
+msgid "running"
 msgstr ""
