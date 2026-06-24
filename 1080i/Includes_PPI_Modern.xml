@@ -345,7 +345,7 @@
 					<control type="label">
 						<left>210</left>
 						<top>170</top>
-						<label>$INFO[Player.Process(video.source.hdr.type)] $INFO[Player.Process(video.dovi.dual.track),- [COLOR dialog_fg_70](,)[/COLOR]]</label>
+						<label>$INFO[Player.Process(video.source.hdr.type)]$VAR[DVDualTrackVar]</label>
 						<font>font_tiny</font>
 						<textcolor>dialog_fg_90</textcolor>
 					</control>
@@ -1221,27 +1221,30 @@
 						<width>300</width>
 						<align>right</align>
 						<top>201</top>
-						<label>$INFO[Player.Process(video.dovi.l5.left.offset)] l $INFO[Player.Process(video.dovi.l5.right.offset)] l $INFO[Player.Process(video.dovi.l5.top.offset)] l $INFO[Player.Process(video.dovi.l5.bottom.offset)]</label>
-						<font>font_tiny</font>
-						<textcolor>dialog_fg_90</textcolor>
-					</control>
+							<label>$INFO[Player.Process(video.dovi.l5.left.offset)] l $INFO[Player.Process(video.dovi.l5.right.offset)] l $INFO[Player.Process(video.dovi.l5.top.offset)] l $INFO[Player.Process(video.dovi.l5.bottom.offset)]</label>
+							<font>font_tiny</font>
+							<textcolor>dialog_fg_90</textcolor>
+							<visible>!String.IsEmpty(Player.Process(video.dovi.l5.detect.state))</visible>
+						</control>
 					<!-- Arrows: Left to right with line icon -->
 					<control type="label">
 						<left>438</left>
 						<top>202</top>
-						<label></label>
-						<font>font_tiny_iconic_regular</font>
-						<textcolor>dialog_fg_90</textcolor>
-					</control>
+							<label></label>
+							<font>font_tiny_iconic_regular</font>
+							<textcolor>dialog_fg_90</textcolor>
+							<visible>!String.IsEmpty(Player.Process(video.dovi.l5.detect.state))</visible>
+						</control>
 					<!-- Arrows: Top to bottom with line icon -->
 					<control type="label">
 						<left>485</left>
 						<top>216</top>
 						<angle>90</angle>
-						<label></label>
-						<font>font_tiny_iconic_regular</font>
-						<textcolor>dialog_fg_90</textcolor>
-					</control>
+							<label></label>
+							<font>font_tiny_iconic_regular</font>
+							<textcolor>dialog_fg_90</textcolor>
+							<visible>!String.IsEmpty(Player.Process(video.dovi.l5.detect.state))</visible>
+						</control>
 				</control>
 				
 				<!-- Group: Filename -->
