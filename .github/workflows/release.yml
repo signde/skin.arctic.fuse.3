@@ -13,16 +13,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out tagged source
-        uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
-
       - name: Read annotated tag notes
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          git tag --list \
-            --format='%(contents)' \
-            "$GITHUB_REF_NAME" > "$RUNNER_TEMP/release-notes.md"
+          tag_sha="$(gh api \
+            "repos/$GITHUB_REPOSITORY/git/ref/tags/$GITHUB_REF_NAME" \
+            --jq '.object.sha')"
+          gh api \
+            "repos/$GITHUB_REPOSITORY/git/tags/$tag_sha" \
+            --jq '.message' > "$RUNNER_TEMP/release-notes.md"
 
       - name: Create GitHub release
         env:
