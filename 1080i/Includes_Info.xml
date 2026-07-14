@@ -515,7 +515,7 @@
                     </control>
 
                     <!-- Info Pill -->
-                    <include content="Info_Line_VideoQuality_Resolution">
+                    <include content="Info_Line_VideoQuality_Resolution" condition="!Skin.HasSetting(Footer.EnableCodecs)">
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="is_8k">[Integer.IsGreater($PARAM[container]$PARAM[listitem].VideoResolution,2160) | String.IsEqual($PARAM[container]$PARAM[listitem].VideoResolution,8K)]</param>
                         <param name="is_4k">[Integer.IsGreater($PARAM[container]$PARAM[listitem].VideoResolution,1080) | String.IsEqual($PARAM[container]$PARAM[listitem].VideoResolution,4K)]</param>
@@ -523,17 +523,17 @@
                         <param name="is_hd">[Integer.IsEqual($PARAM[container]$PARAM[listitem].VideoResolution,720)]</param>
                         <param name="is_sd">[!String.IsEmpty($PARAM[container]$PARAM[listitem].VideoResolution)]</param>
                     </include>
-                    <include content="Info_Line_VideoQuality_HDRType" condition="Skin.HasSetting(InfoTags.EnableHDR)">
+                    <include content="Info_Line_VideoQuality_HDRType" condition="Skin.HasSetting(InfoTags.EnableHDR) + !Skin.HasSetting(Footer.EnableCodecs)">
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="container">$PARAM[container]</param>
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
-                    <include content="Info_Line_AudioCodec" condition="Skin.HasSetting(InfoTags.EnableAudioCodec)">
+                    <include content="Info_Line_AudioCodec" condition="Skin.HasSetting(InfoTags.EnableAudioCodec) + !Skin.HasSetting(Footer.EnableCodecs)">
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="container">$PARAM[container]</param>
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
-                    <include content="Info_Line_AudioChannels_Resolution" condition="Skin.HasSetting(InfoTags.EnableAudioChannels)">
+                    <include content="Info_Line_AudioChannels_Resolution" condition="Skin.HasSetting(InfoTags.EnableAudioChannels) + !Skin.HasSetting(Footer.EnableCodecs)">
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="container">$PARAM[container]</param>
                         <param name="listitem">$PARAM[listitem]</param>
@@ -658,7 +658,7 @@
                     </control>
 
                     <!-- Info Pill -->
-                    <include content="Info_Line_VideoQuality_Resolution">
+                    <include content="Info_Line_VideoQuality_Resolution" condition="!Skin.HasSetting(Footer.EnableCodecs)">
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="is_8k">[Integer.IsGreater($PARAM[container]$PARAM[listitem].VideoResolution,2160) | String.IsEqual($PARAM[container]$PARAM[listitem].VideoResolution,8K)]</param>
                         <param name="is_4k">[Integer.IsGreater($PARAM[container]$PARAM[listitem].VideoResolution,1080) | String.IsEqual($PARAM[container]$PARAM[listitem].VideoResolution,4K)]</param>
@@ -666,17 +666,17 @@
                         <param name="is_hd">[Integer.IsEqual($PARAM[container]$PARAM[listitem].VideoResolution,720)]</param>
                         <param name="is_sd">[!String.IsEmpty($PARAM[container]$PARAM[listitem].VideoResolution)]</param>
                     </include>
-                    <include content="Info_Line_VideoQuality_HDRType" condition="Skin.HasSetting(InfoTags.EnableHDR)">
+                    <include content="Info_Line_VideoQuality_HDRType" condition="Skin.HasSetting(InfoTags.EnableHDR) + !Skin.HasSetting(Footer.EnableCodecs)">
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="container">$PARAM[container]</param>
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
-                    <include content="Info_Line_AudioCodec" condition="Skin.HasSetting(InfoTags.EnableAudioCodec)">
+                    <include content="Info_Line_AudioCodec" condition="Skin.HasSetting(InfoTags.EnableAudioCodec) + !Skin.HasSetting(Footer.EnableCodecs)">
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="container">$PARAM[container]</param>
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
-                    <include content="Info_Line_AudioChannels_Resolution" condition="Skin.HasSetting(InfoTags.EnableAudioChannels)">
+                    <include content="Info_Line_AudioChannels_Resolution" condition="Skin.HasSetting(InfoTags.EnableAudioChannels) + !Skin.HasSetting(Footer.EnableCodecs)">
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
                         <param name="container">$PARAM[container]</param>
                         <param name="listitem">$PARAM[listitem]</param>

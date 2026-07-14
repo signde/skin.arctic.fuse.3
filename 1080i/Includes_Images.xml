@@ -67,6 +67,29 @@
         <value>special://skin/extras/icons/comment.png</value>
     </variable>
 
+    <variable name="Image_Furniture_AudioCodec">
+        <value condition="[String.IsEqual(ListItem.AudioCodec,truehd) | String.IsEqual(ListItem.AudioCodec,eac3)] + [String.Contains(ListItem.FileNameAndPath,Atmos) | String.Contains(ListItem.FileNameAndPath,.Atmos.)]">flags/color/audio/atmos.png</value>
+        <value condition="String.Contains(ListItem.AudioCodec,atmos)">flags/color/audio/atmos.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,truehd_atmos) | String.IsEqual(ListItem.AudioCodec,eac3_ddp_atmos)">flags/color/audio/atmos.png</value>
+        <value condition="[String.IsEqual(ListItem.AudioCodec,dtshd) | String.IsEqual(ListItem.AudioCodec,dtshd_ma)] + [String.Contains(ListItem.FileNameAndPath,DTS-X) | String.Contains(ListItem.FileNameAndPath,DTSX) | String.Contains(ListItem.FileNameAndPath,DTS:X)]">flags/color/audio/dtsx.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,dtshd_ma_x) | String.IsEqual(ListItem.AudioCodec,dtshd_ma_x_imax) | String.IsEqual(ListItem.AudioCodec,dtsx) | String.IsEqual(ListItem.AudioCodec,dts_x)">flags/color/audio/dtsx.png</value>
+        <value>$INFO[ListItem.AudioCodec,flags/color/audio/,.png]</value>
+    </variable>
+
+    <variable name="Image_Furniture_VideoCodec">
+        <value condition="String.IsEqual(ListItem.VideoCodec,av1)">flags/color/source/av1.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,vp9) | String.IsEqual(ListItem.VideoCodec,vp9.2) | String.IsEqual(ListItem.VideoCodec,vp09)">flags/color/source/vp9.png</value>
+        <value>$INFO[ListItem.VideoCodec,flags/color/source/,.png]</value>
+    </variable>
+
+    <variable name="Image_Furniture_SourceQuality">
+        <value condition="String.Contains(ListItem.FileNameAndPath,web-dl) | String.Contains(ListItem.FileNameAndPath,WEB-DL) | String.Contains(ListItem.FileNameAndPath,Web-DL) | String.Contains(ListItem.FileNameAndPath,webdl) | String.Contains(ListItem.FileNameAndPath,WEBDL) | String.Contains(ListItem.FileNameAndPath,WebDL) | String.Contains(ListItem.FileNameAndPath,webrip) | String.Contains(ListItem.FileNameAndPath,WEBRip) | String.Contains(ListItem.FileNameAndPath,WEBRIP) | String.Contains(ListItem.FileNameAndPath,web-rip) | String.Contains(ListItem.FileNameAndPath,WEB-RIP)">flags/color/source/web-dl.png</value>
+        <value condition="String.Contains(ListItem.FileNameAndPath,remux) | String.Contains(ListItem.FileNameAndPath,Remux) | String.Contains(ListItem.FileNameAndPath,REMUX) | String.Contains(ListItem.FileNameAndPath,blu-ray) | String.Contains(ListItem.FileNameAndPath,BluRay) | String.Contains(ListItem.FileNameAndPath,BLURAY) | String.Contains(ListItem.FileNameAndPath,bluray) | String.Contains(ListItem.FileNameAndPath,bdrip) | String.Contains(ListItem.FileNameAndPath,BDRip) | String.Contains(ListItem.FileNameAndPath,brrip) | String.Contains(ListItem.FileNameAndPath,BRRip) | String.Contains(ListItem.FileNameAndPath,bd25) | String.Contains(ListItem.FileNameAndPath,BD25) | String.Contains(ListItem.FileNameAndPath,bd50) | String.Contains(ListItem.FileNameAndPath,BD50) | String.Contains(ListItem.FileNameAndPath,bdmv) | String.Contains(ListItem.FileNameAndPath,BDMV)">flags/color/source/bluray.png</value>
+        <value condition="String.Contains(ListItem.FileNameAndPath,[DVD]) | String.Contains(ListItem.FileNameAndPath,.DVD.) | String.Contains(ListItem.FileNameAndPath, DVD ) | String.Contains(ListItem.FileNameAndPath,-DVD) | String.Contains(ListItem.FileNameAndPath,_DVD) | String.EndsWith(ListItem.FileNameAndPath,dvd) | String.EndsWith(ListItem.FileNameAndPath,DVD) | String.EndsWith(ListItem.FileNameAndPath,.ifo) | String.EndsWith(ListItem.FileNameAndPath,.IFO) | String.EndsWith(ListItem.FileNameAndPath,.iso) | String.EndsWith(ListItem.FileNameAndPath,.ISO) | String.Contains(ListItem.FileNameAndPath,dvdrip) | String.Contains(ListItem.FileNameAndPath,DVDRip) | String.Contains(ListItem.FileNameAndPath,DVDRIP)">flags/color/source/dvd.png</value>
+        <value condition="String.Contains(ListItem.FileNameAndPath,sdtv) | String.Contains(ListItem.FileNameAndPath,SDTV) | String.Contains(ListItem.FileNameAndPath,sd-tv) | String.Contains(ListItem.FileNameAndPath,SD-TV) | String.Contains(ListItem.FileNameAndPath,pdtv) | String.Contains(ListItem.FileNameAndPath,PDTV)">flags/color/source/sdtv.png</value>
+        <value condition="String.Contains(ListItem.FileNameAndPath,hdtv) | String.Contains(ListItem.FileNameAndPath,HDTV) | String.Contains(ListItem.FileNameAndPath,dsr) | String.Contains(ListItem.FileNameAndPath,DSR)">flags/color/source/hdtv.png</value>
+    </variable>
+
     <variable name="Image_VideoOSD_PersonCredits">
         <value condition="Skin.String(VideoOSD.PersonCredits.WidgetInfo,crew)">special://skin/extras/icons/clapperboard.png</value>
         <value condition="Skin.String(VideoOSD.PersonCredits.WidgetInfo,both)">special://skin/extras/icons/video.png</value>
