@@ -479,6 +479,7 @@
             <control type="group">
                 <include>Furniture_Reposition</include>
                 <visible>!$EXP[Exp_InfoDialogs]</visible>
+                <visible>!$EXP[View_Mode_Wall_Expression]</visible>
                 <include>Furniture_Footer_Right</include>
             </control>
         </definition>
