@@ -196,7 +196,7 @@
                     <texture background="true" colordiffuse="$PARAM[colordiffuse]">$INFO[$PARAM[infolabel_videoresolution],flags/color/resolution/,.png]</texture>
                     <aspectratio>keep</aspectratio>
                     <height>48</height>
-                    <width>66</width>
+                    <width>71</width>
                     <centertop>50%</centertop>
                     <visible>!String.IsEmpty($PARAM[infolabel_videoresolution])</visible>
                 </control>
@@ -274,7 +274,7 @@
             </include>
             <include content="View_Furniture_Footer_ViewLine" condition="$EXP[Exp_PlainBackgroundWindows]">
                 <param name="visible">true</param>
-                <param name="label">$INFO[System.AddonVersion(skin.arctic.fuse.3),Arctic Fuse 3 • v, (p3i)]</param>
+                <param name="label">$INFO[System.AddonVersion(skin.arctic.fuse.3),Arctic Fuse 3 • v, (avdvplus/p3i)]</param>
             </include>
         </control>
     </include>
