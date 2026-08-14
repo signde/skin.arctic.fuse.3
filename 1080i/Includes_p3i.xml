@@ -8,6 +8,228 @@
         <height>50</height>
     </include>
 
+    <!-- Shared opaque background for every enhanced PPI surface. This mirrors
+         TinyPPI's charcoal panel so codec, channel, and info panels match. -->
+    <include name="PPIUnifiedBackground">
+        <control type="image">
+            <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
+        </control>
+    </include>
+
+    <include name="PPIUnifiedBackgroundPadded">
+        <control type="group">
+            <include content="Dimension_Padding">
+                <param name="pad">40</param>
+            </include>
+            <include>PPIUnifiedBackground</include>
+        </control>
+    </include>
+
+    <!-- Upper-right speaker layout. Move it left when right-side codec logos
+         are enabled so both PPI graphics remain visible. -->
+    <include name="PPIChannelLayout">
+        <include content="PPIChannelLayoutPanel" condition="!Skin.HasSetting(ppi.userightCodecLogos)">
+            <param name="left">1485</param>
+        </include>
+        <include content="PPIChannelLayoutPanel" condition="Skin.HasSetting(ppi.userightCodecLogos)">
+            <param name="left">1240</param>
+        </include>
+    </include>
+
+    <include name="PPIChannelLayoutPanel">
+        <definition>
+            <control type="group">
+                <visible>Integer.IsEqual(VideoPlayer.AudioChannels,1) | Integer.IsEqual(VideoPlayer.AudioChannels,2) | Integer.IsEqual(VideoPlayer.AudioChannels,3) | Integer.IsEqual(VideoPlayer.AudioChannels,4) | Integer.IsEqual(VideoPlayer.AudioChannels,5) | Integer.IsEqual(VideoPlayer.AudioChannels,6) | Integer.IsEqual(VideoPlayer.AudioChannels,7) | Integer.IsEqual(VideoPlayer.AudioChannels,8)</visible>
+                <left>$PARAM[left]</left>
+                <top>35</top>
+                <width>400</width>
+                <height>265</height>
+                <include>PPIUnifiedBackground</include>
+                <control type="image">
+                    <top>12</top>
+                    <width>400</width>
+                    <height>241</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture colordiffuse="dialog_fg_30">channels/ppi/layer.png</texture>
+                </control>
+                <control type="image">
+                    <top>12</top>
+                    <width>400</width>
+                    <height>241</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture colordiffuse="dialog_fg_90">$VAR[PPIChannelLayoutTexture]</texture>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+    <!-- FEL/MEL/other-DV indicator shown at the bottom of the existing codec
+         logo panel. The output condition mirrors the Dolby Vision logo logic. -->
+    <include name="DolbyVisionLayerPill">
+        <!-- Audio metadata can arrive after VideoFullScreen.xml is loaded.
+             Runtime visibility lets the pill move when the audio logo appears;
+             conditional includes would lock in the startup state. -->
+        <control type="group">
+            <visible>!String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+            <include content="DolbyVisionLayerPillAt">
+                <param name="top">199</param>
+            </include>
+        </control>
+        <control type="group">
+            <visible>String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+            <include content="DolbyVisionLayerPillAt">
+                <param name="top">112</param>
+            </include>
+        </control>
+    </include>
+
+    <include name="DolbyVisionLayerPillAt">
+        <definition>
+            <control type="group">
+                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw),3) | String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)</visible>
+                <left>82</left>
+                <top>$PARAM[top]</top>
+                <width>45</width>
+                <height>7</height>
+                <control type="image">
+                    <visible>String.Contains(Player.Process(video.dovi.el.type),full)</visible>
+                    <texture colordiffuse="FF81C784">common/ppi-pill.png</texture>
+                </control>
+                <control type="image">
+                    <visible>String.Contains(Player.Process(video.dovi.el.type),minimum)</visible>
+                    <texture colordiffuse="FFFFB74D">common/ppi-pill.png</texture>
+                </control>
+                <control type="image">
+                    <visible>!String.Contains(Player.Process(video.dovi.el.type),full) + !String.Contains(Player.Process(video.dovi.el.type),minimum)</visible>
+                    <texture colordiffuse="4DFFFFFF">common/ppi-pill.png</texture>
+                </control>
+            </control>
+        </definition>
+    </include>
+
+    <!-- Additional audio codecs adopted from TinyPPI. These are included after
+         each codec panel so normal control order keeps them above its background. -->
+    <include name="AdditionalAudioCodecFlags">
+        <control type="image" id="150">
+            <visible>String.IsEqual(VideoPlayer.AudioCodec,dts_96_24)</visible>
+            <left>30</left>
+            <top>140</top>
+            <width>150</width>
+            <height>49</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="dialog_fg_90">codecs/DTS-96-24.png</texture>
+        </control>
+        <control type="image" id="151">
+            <visible>String.IsEqual(VideoPlayer.AudioCodec,dts_es)</visible>
+            <left>30</left>
+            <top>140</top>
+            <width>150</width>
+            <height>49</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="dialog_fg_90">codecs/DTS-ES.png</texture>
+        </control>
+        <control type="image" id="152">
+            <visible>String.IsEqual(VideoPlayer.AudioCodec,dts_express)</visible>
+            <left>30</left>
+            <top>135</top>
+            <width>150</width>
+            <height>56</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="dialog_fg_90">codecs/DTS-Express.png</texture>
+        </control>
+        <control type="image" id="153">
+            <visible>String.IsEqual(VideoPlayer.AudioCodec,mp1)</visible>
+            <left>30</left>
+            <top>140</top>
+            <width>150</width>
+            <height>49</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="dialog_fg_90">codecs/MP1.png</texture>
+        </control>
+        <control type="image" id="154">
+            <visible>String.IsEqual(VideoPlayer.AudioCodec,mp2)</visible>
+            <left>30</left>
+            <top>140</top>
+            <width>150</width>
+            <height>49</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="dialog_fg_90">codecs/MP2.png</texture>
+        </control>
+        <control type="image" id="155">
+            <visible>String.IsEqual(VideoPlayer.AudioCodec,dts_96_24) | String.IsEqual(VideoPlayer.AudioCodec,dts_es) | String.IsEqual(VideoPlayer.AudioCodec,dts_express) | String.IsEqual(VideoPlayer.AudioCodec,mp1) | String.IsEqual(VideoPlayer.AudioCodec,mp2)</visible>
+            <left>15</left>
+            <top>120</top>
+            <width>180</width>
+            <height>1.5</height>
+            <texture colordiffuse="80FFFFFF">common/selectedwhite.png</texture>
+        </control>
+    </include>
+
+    <!-- VideoFullScreen renders these controls on its own depth plane. Keep the
+         depth on each image rather than a parent group; Kodi does not propagate
+         a group's depth to controls expanded from a named include. -->
+    <include name="AdditionalAudioCodecFlagsStartup">
+        <control type="image" id="150">
+            <depth>0.45</depth>
+            <visible>String.IsEqual(VideoPlayer.AudioCodec,dts_96_24)</visible>
+            <left>30</left>
+            <top>140</top>
+            <width>150</width>
+            <height>49</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="dialog_fg_90">codecs/DTS-96-24.png</texture>
+        </control>
+        <control type="image" id="151">
+            <depth>0.45</depth>
+            <visible>String.IsEqual(VideoPlayer.AudioCodec,dts_es)</visible>
+            <left>30</left>
+            <top>140</top>
+            <width>150</width>
+            <height>49</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="dialog_fg_90">codecs/DTS-ES.png</texture>
+        </control>
+        <control type="image" id="152">
+            <depth>0.45</depth>
+            <visible>String.IsEqual(VideoPlayer.AudioCodec,dts_express)</visible>
+            <left>30</left>
+            <top>135</top>
+            <width>150</width>
+            <height>56</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="dialog_fg_90">codecs/DTS-Express.png</texture>
+        </control>
+        <control type="image" id="153">
+            <depth>0.45</depth>
+            <visible>String.IsEqual(VideoPlayer.AudioCodec,mp1)</visible>
+            <left>30</left>
+            <top>140</top>
+            <width>150</width>
+            <height>49</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="dialog_fg_90">codecs/MP1.png</texture>
+        </control>
+        <control type="image" id="154">
+            <depth>0.45</depth>
+            <visible>String.IsEqual(VideoPlayer.AudioCodec,mp2)</visible>
+            <left>30</left>
+            <top>140</top>
+            <width>150</width>
+            <height>49</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="dialog_fg_90">codecs/MP2.png</texture>
+        </control>
+        <control type="image" id="155">
+            <depth>0.45</depth>
+            <visible>String.IsEqual(VideoPlayer.AudioCodec,dts_96_24) | String.IsEqual(VideoPlayer.AudioCodec,dts_es) | String.IsEqual(VideoPlayer.AudioCodec,dts_express) | String.IsEqual(VideoPlayer.AudioCodec,mp1) | String.IsEqual(VideoPlayer.AudioCodec,mp2)</visible>
+            <left>15</left>
+            <top>120</top>
+            <width>180</width>
+            <height>1.5</height>
+            <texture colordiffuse="80FFFFFF">common/selectedwhite.png</texture>
+        </control>
+    </include>
+
     <include name="CodecLogosLeftPPI">
         <control type="group">
             <left>35</left>
@@ -15,9 +237,9 @@
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                 <top>35</top>
                 <width>210</width>
-                <height>170</height>
+                <height>180</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -26,7 +248,7 @@
                 <width>210</width>
                 <height>90</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner_small.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -35,7 +257,7 @@
                 <width>210</width>
                 <height>90</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner_small.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -308,6 +530,8 @@
                     <texture colordiffuse="dialog_fg_90">codecs/OPUS.png</texture>
                 </control>
             </control>
+            <include>AdditionalAudioCodecFlags</include>
+            <include>DolbyVisionLayerPill</include>
         </control>
     </include>
 
@@ -321,9 +545,9 @@
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                 <top>35</top>
                 <width>210</width>
-                <height>170</height>
+                <height>180</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -332,7 +556,7 @@
                 <width>210</width>
                 <height>90</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner_small.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -341,7 +565,7 @@
                 <width>210</width>
                 <height>90</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner_small.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -614,6 +838,8 @@
                     <texture colordiffuse="dialog_fg_90">codecs/OPUS.png</texture>
                 </control>
             </control>
+            <include>AdditionalAudioCodecFlags</include>
+            <include>DolbyVisionLayerPill</include>
         </control>
     </include>
 
@@ -624,9 +850,9 @@
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                 <top>35</top>
                 <width>210</width>
-                <height>170</height>
+                <height>180</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -635,7 +861,7 @@
                 <width>210</width>
                 <height>90</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner_small.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -644,7 +870,7 @@
                 <width>210</width>
                 <height>90</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner_small.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -917,6 +1143,8 @@
                     <texture colordiffuse="dialog_fg_90">codecs/OPUS.png</texture>
                 </control>
             </control>
+            <include>AdditionalAudioCodecFlags</include>
+            <include>DolbyVisionLayerPill</include>
         </control>
     </include>
 
@@ -930,9 +1158,9 @@
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                 <top>35</top>
                 <width>210</width>
-                <height>170</height>
+                <height>180</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -941,7 +1169,7 @@
                 <width>210</width>
                 <height>90</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner_small.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -950,7 +1178,7 @@
                 <width>210</width>
                 <height>90</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner_small.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1223,6 +1451,8 @@
                     <texture colordiffuse="dialog_fg_90">codecs/OPUS.png</texture>
                 </control>
             </control>
+            <include>AdditionalAudioCodecFlags</include>
+            <include>DolbyVisionLayerPill</include>
         </control>
     </include>
 
@@ -1233,9 +1463,9 @@
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                 <top>35</top>
                 <width>210</width>
-                <height>170</height>
+                <height>180</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1244,7 +1474,7 @@
                 <width>210</width>
                 <height>90</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner_small.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1253,7 +1483,7 @@
                 <width>210</width>
                 <height>90</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner_small.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1526,6 +1756,8 @@
                     <texture colordiffuse="dialog_fg_90">codecs/OPUS.png</texture>
                 </control>
             </control>
+            <include>AdditionalAudioCodecFlags</include>
+            <include>DolbyVisionLayerPill</include>
         </control>
     </include>
 
@@ -1539,9 +1771,9 @@
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                 <top>35</top>
                 <width>210</width>
-                <height>170</height>
+                <height>180</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1550,7 +1782,7 @@
                 <width>210</width>
                 <height>90</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner_small.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1559,7 +1791,7 @@
                 <width>210</width>
                 <height>90</height>
                 <control type="image">
-                    <texture colordiffuse="80FFFFFF">common/corner_small.png</texture>
+                    <texture colordiffuse="FA15191A" border="20">common/dialog.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1832,6 +2064,8 @@
                     <texture colordiffuse="dialog_fg_90">codecs/OPUS.png</texture>
                 </control>
             </control>
+            <include>AdditionalAudioCodecFlags</include>
+            <include>DolbyVisionLayerPill</include>
         </control>
     </include>
 
@@ -1841,15 +2075,43 @@
         <param name="visible" />
         <param name="texture" />
         <param name="colordiffuse" />
+        <param name="pillVisible" />
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
                     <top>35</top>
                     <width>210</width>
-                    <height>170</height>
+                    <height>180</height>
                     <visible>$PARAM[visible]</visible>
-                    <texture>$PARAM[texture]</texture>
+                    <texture border="20">$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
+                </control>
+                <control type="image" id="146">
+                    <visible>$PARAM[pillVisible] + String.Contains(Player.Process(video.dovi.el.type),full)</visible>
+                    <depth>0.45</depth>
+                    <left>82</left>
+                    <top>199</top>
+                    <width>45</width>
+                    <height>7</height>
+                    <texture colordiffuse="FF81C784">common/ppi-pill.png</texture>
+                </control>
+                <control type="image" id="147">
+                    <visible>$PARAM[pillVisible] + String.Contains(Player.Process(video.dovi.el.type),minimum)</visible>
+                    <depth>0.45</depth>
+                    <left>82</left>
+                    <top>199</top>
+                    <width>45</width>
+                    <height>7</height>
+                    <texture colordiffuse="FFFFB74D">common/ppi-pill.png</texture>
+                </control>
+                <control type="image" id="148">
+                    <visible>$PARAM[pillVisible] + !String.Contains(Player.Process(video.dovi.el.type),full) + !String.Contains(Player.Process(video.dovi.el.type),minimum)</visible>
+                    <depth>0.45</depth>
+                    <left>82</left>
+                    <top>199</top>
+                    <width>45</width>
+                    <height>7</height>
+                    <texture colordiffuse="4DFFFFFF">common/ppi-pill.png</texture>
                 </control>
             </control>
         </definition>
@@ -1861,6 +2123,7 @@
         <param name="visible" />
         <param name="texture" />
         <param name="colordiffuse" />
+        <param name="pillVisible" />
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
@@ -1868,8 +2131,35 @@
                     <width>210</width>
                     <height>90</height>
                     <visible>$PARAM[visible]</visible>
-                    <texture>$PARAM[texture]</texture>
+                    <texture border="20">$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
+                </control>
+                <control type="image" id="146">
+                    <visible>$PARAM[pillVisible] + String.Contains(Player.Process(video.dovi.el.type),full)</visible>
+                    <depth>0.45</depth>
+                    <left>82</left>
+                    <top>112</top>
+                    <width>45</width>
+                    <height>7</height>
+                    <texture colordiffuse="FF81C784">common/ppi-pill.png</texture>
+                </control>
+                <control type="image" id="147">
+                    <visible>$PARAM[pillVisible] + String.Contains(Player.Process(video.dovi.el.type),minimum)</visible>
+                    <depth>0.45</depth>
+                    <left>82</left>
+                    <top>112</top>
+                    <width>45</width>
+                    <height>7</height>
+                    <texture colordiffuse="FFFFB74D">common/ppi-pill.png</texture>
+                </control>
+                <control type="image" id="148">
+                    <visible>$PARAM[pillVisible] + !String.Contains(Player.Process(video.dovi.el.type),full) + !String.Contains(Player.Process(video.dovi.el.type),minimum)</visible>
+                    <depth>0.45</depth>
+                    <left>82</left>
+                    <top>112</top>
+                    <width>45</width>
+                    <height>7</height>
+                    <texture colordiffuse="4DFFFFFF">common/ppi-pill.png</texture>
                 </control>
             </control>
         </definition>
@@ -1888,7 +2178,7 @@
                     <width>210</width>
                     <height>90</height>
                     <visible>$PARAM[visible]</visible>
-                    <texture>$PARAM[texture]</texture>
+                    <texture border="20">$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
                 </control>
             </control>

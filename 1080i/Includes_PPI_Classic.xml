@@ -24,6 +24,7 @@
 			<include condition="Skin.HasSetting(ppi.useleftCodecLogos)">CodecLogosLeftPPI</include>
 			<include condition="Skin.HasSetting(ppi.usecenterCodecLogos)">CodecLogosCenterPPI</include>
 			<include condition="Skin.HasSetting(ppi.userightCodecLogos)">CodecLogosRightPPI</include>
+			<include>PPIChannelLayout</include>
 
 			<!-- Group: Bottom screen -->
 			<control type="group">
