@@ -101,24 +101,26 @@
                 <param name="groupId">46</param>
                 <param name="imageId">47</param>
                 <param name="visible">!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
-                <param name="texture">common/corner.png</param>
-                <param name="colordiffuse">80FFFFFF</param>
+                <param name="texture">common/dialog.png</param>
+                <param name="colordiffuse">FA15191A</param>
+                <param name="pillVisible">!String.IsEmpty(VideoPlayer.AudioCodec) + [String.IsEqual(Player.Process(video.source.hdr.type.raw),3) | String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)]</param>
             </include>
 			
             <include content="Video_Background_Flag">
                 <param name="groupId">48</param>
                 <param name="imageId">49</param>
                 <param name="visible">!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</param>
-                <param name="texture">common/corner_small.png</param>
-                <param name="colordiffuse">80FFFFFF</param>
+                <param name="texture">common/dialog.png</param>
+                <param name="colordiffuse">FA15191A</param>
+                <param name="pillVisible">String.IsEmpty(VideoPlayer.AudioCodec) + [String.IsEqual(Player.Process(video.source.hdr.type.raw),3) | String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)]</param>
             </include>
 			
             <include content="Audio_Background_Flag">
                 <param name="groupId">50</param>
                 <param name="imageId">51</param>
                 <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
-                <param name="texture">common/corner_small.png</param>
-                <param name="colordiffuse">80FFFFFF</param>
+                <param name="texture">common/dialog.png</param>
+                <param name="colordiffuse">FA15191A</param>
             </include>
 			
             <include content="SDR_Bypass_Flag">
@@ -280,6 +282,7 @@
                 <param name="texture">codecs/DTS.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
+            <include>AdditionalAudioCodecFlagsStartup</include>
 			
             <include content="DTS_HD_MA_Flag">
                 <param name="groupId">92</param>
@@ -412,24 +415,26 @@
                 <param name="groupId">46</param>
                 <param name="imageId">47</param>
                 <param name="visible">!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
-                <param name="texture">common/corner.png</param>
-                <param name="colordiffuse">80FFFFFF</param>
+                <param name="texture">common/dialog.png</param>
+                <param name="colordiffuse">FA15191A</param>
+                <param name="pillVisible">!String.IsEmpty(VideoPlayer.AudioCodec) + [String.IsEqual(Player.Process(video.source.hdr.type.raw),3) | String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)]</param>
             </include>
 			
             <include content="Video_Background_Flag">
                 <param name="groupId">48</param>
                 <param name="imageId">49</param>
                 <param name="visible">!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</param>
-                <param name="texture">common/corner_small.png</param>
-                <param name="colordiffuse">80FFFFFF</param>
+                <param name="texture">common/dialog.png</param>
+                <param name="colordiffuse">FA15191A</param>
+                <param name="pillVisible">String.IsEmpty(VideoPlayer.AudioCodec) + [String.IsEqual(Player.Process(video.source.hdr.type.raw),3) | String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)]</param>
             </include>
 			
             <include content="Audio_Background_Flag">
                 <param name="groupId">50</param>
                 <param name="imageId">51</param>
                 <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
-                <param name="texture">common/corner_small.png</param>
-                <param name="colordiffuse">80FFFFFF</param>
+                <param name="texture">common/dialog.png</param>
+                <param name="colordiffuse">FA15191A</param>
             </include>
 			
             <include content="SDR_Bypass_Flag">
@@ -591,6 +596,7 @@
                 <param name="texture">codecs/DTS.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
+            <include>AdditionalAudioCodecFlagsStartup</include>
 			
             <include content="DTS_HD_MA_Flag">
                 <param name="groupId">92</param>
@@ -723,24 +729,26 @@
                 <param name="groupId">46</param>
                 <param name="imageId">47</param>
                 <param name="visible">!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
-                <param name="texture">common/corner.png</param>
-                <param name="colordiffuse">80FFFFFF</param>
+                <param name="texture">common/dialog.png</param>
+                <param name="colordiffuse">FA15191A</param>
+                <param name="pillVisible">!String.IsEmpty(VideoPlayer.AudioCodec) + [String.IsEqual(Player.Process(video.source.hdr.type.raw),3) | String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)]</param>
             </include>
 			
             <include content="Video_Background_Flag">
                 <param name="groupId">48</param>
                 <param name="imageId">49</param>
                 <param name="visible">!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</param>
-                <param name="texture">common/corner_small.png</param>
-                <param name="colordiffuse">80FFFFFF</param>
+                <param name="texture">common/dialog.png</param>
+                <param name="colordiffuse">FA15191A</param>
+                <param name="pillVisible">String.IsEmpty(VideoPlayer.AudioCodec) + [String.IsEqual(Player.Process(video.source.hdr.type.raw),3) | String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)]</param>
             </include>
 			
             <include content="Audio_Background_Flag">
                 <param name="groupId">50</param>
                 <param name="imageId">51</param>
                 <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
-                <param name="texture">common/corner_small.png</param>
-                <param name="colordiffuse">80FFFFFF</param>
+                <param name="texture">common/dialog.png</param>
+                <param name="colordiffuse">FA15191A</param>
             </include>
 			
             <include content="SDR_Bypass_Flag">
@@ -902,6 +910,7 @@
                 <param name="texture">codecs/DTS.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
+            <include>AdditionalAudioCodecFlagsStartup</include>
 			
             <include content="DTS_HD_MA_Flag">
                 <param name="groupId">92</param>

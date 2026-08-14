@@ -717,6 +717,9 @@
         <value condition="String.IsEqual(VideoPlayer.AudioCodec,avc)">AVC</value>
         <value condition="String.IsEqual(VideoPlayer.AudioCodec,cdda)">CDDA</value>
         <value condition="String.IsEqual(VideoPlayer.AudioCodec,dca)">DTS</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,dts_96_24)">DTS 96/24</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,dts_es)">DTS-ES</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,dts_express)">DTS Express</value>
         <value condition="String.IsEqual(VideoPlayer.AudioCodec,dolbydigital)">Dolby Digital</value>
         <value condition="String.IsEqual(VideoPlayer.AudioCodec,dts)">DTS</value>
         <value condition="String.IsEqual(VideoPlayer.AudioCodec,dtshd)">DTS-HD</value>
@@ -1684,6 +1687,9 @@
         <value condition="String.IsEqual(VideoPlayer.AudioCodec,avc)">AVC</value>
         <value condition="String.IsEqual(VideoPlayer.AudioCodec,cdda)">CDDA</value>
         <value condition="String.IsEqual(VideoPlayer.AudioCodec,dca)">DTS</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,dts_96_24)">DTS 96/24</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,dts_es)">DTS-ES</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,dts_express)">DTS Express</value>
         <value condition="String.IsEqual(VideoPlayer.AudioCodec,dolbydigital)">Dolby Digital</value>
         <value condition="String.IsEqual(VideoPlayer.AudioCodec,dtshd)">DTS-HD</value>
         <value condition="String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma)">DTS-HD MA</value>
@@ -1729,7 +1735,21 @@
         <value condition="Integer.IsEqual(VideoPlayer.AudioChannels,8)">7.1</value>
         <value condition="Integer.IsEqual(VideoPlayer.AudioChannels,10)">9.1</value>
     </variable>
-	
+
+    <!-- Speaker-layout artwork used by the enhanced Player Process Info panel. -->
+    <variable name="PPIChannelLayoutTexture">
+        <value condition="Integer.IsEqual(VideoPlayer.AudioChannels,6) + [String.IsEqual(VideoPlayer.AudioCodec,eac3_ddp_atmos) | String.IsEqual(VideoPlayer.AudioCodec,truehd_atmos) | String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x) | String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x_imax)]">channels/ppi/5.1.2.png</value>
+        <value condition="Integer.IsEqual(VideoPlayer.AudioChannels,8) + [String.IsEqual(VideoPlayer.AudioCodec,eac3_ddp_atmos) | String.IsEqual(VideoPlayer.AudioCodec,truehd_atmos) | String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x) | String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x_imax)]">channels/ppi/7.1.2.png</value>
+        <value condition="Integer.IsEqual(VideoPlayer.AudioChannels,1)">channels/ppi/1.0.png</value>
+        <value condition="Integer.IsEqual(VideoPlayer.AudioChannels,2)">channels/ppi/2.0.png</value>
+        <value condition="Integer.IsEqual(VideoPlayer.AudioChannels,3)">channels/ppi/2.1.png</value>
+        <value condition="Integer.IsEqual(VideoPlayer.AudioChannels,4)">channels/ppi/3.1.png</value>
+        <value condition="Integer.IsEqual(VideoPlayer.AudioChannels,5)">channels/ppi/4.1.png</value>
+        <value condition="Integer.IsEqual(VideoPlayer.AudioChannels,6)">channels/ppi/5.1.png</value>
+        <value condition="Integer.IsEqual(VideoPlayer.AudioChannels,7)">channels/ppi/6.1.png</value>
+        <value condition="Integer.IsEqual(VideoPlayer.AudioChannels,8)">channels/ppi/7.1.png</value>
+    </variable>
+
     <variable name="AudioChannelsInputVar">
         <value condition="Integer.IsEqual(VideoPlayer.AudioChannels,1)">Mono</value>
         <value condition="Integer.IsEqual(VideoPlayer.AudioChannels,2)">FL, FR</value>
