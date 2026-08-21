@@ -39,6 +39,7 @@
     <include name="PPIChannelLayoutPanel">
         <definition>
             <control type="group">
+                <visible>!Skin.HasSetting(ppi.hideChannelLayout)</visible>
                 <visible>Integer.IsEqual(VideoPlayer.AudioChannels,1) | Integer.IsEqual(VideoPlayer.AudioChannels,2) | Integer.IsEqual(VideoPlayer.AudioChannels,3) | Integer.IsEqual(VideoPlayer.AudioChannels,4) | Integer.IsEqual(VideoPlayer.AudioChannels,5) | Integer.IsEqual(VideoPlayer.AudioChannels,6) | Integer.IsEqual(VideoPlayer.AudioChannels,7) | Integer.IsEqual(VideoPlayer.AudioChannels,8)</visible>
                 <left>$PARAM[left]</left>
                 <top>35</top>

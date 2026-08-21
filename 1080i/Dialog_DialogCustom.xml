@@ -1781,6 +1781,14 @@
             <onclick condition="Skin.HasSetting(ppi.userightCodecLogos)">Skin.Reset(ppi.userightCodecLogos)</onclick>
             <onclick condition="Skin.HasSetting(ppi.usecenterCodecLogos)">Skin.Reset(ppi.usecenterCodecLogos)</onclick>
         </include>
+        <include content="Settings_Button">
+            <param name="dialog">true</param>
+            <param name="id">8018</param>
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31994]</label>
+            <onclick>Skin.ToggleSetting(ppi.hideChannelLayout)</onclick>
+            <selected>!Skin.HasSetting(ppi.hideChannelLayout)</selected>
+        </include>
         <include content="Settings_Label">
             <param name="id">8011</param>
             <param name="dialog">true</param>

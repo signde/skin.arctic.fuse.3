@@ -2805,3 +2805,7 @@ msgstr ""
 msgctxt "#31993"
 msgid "running"
 msgstr ""
+
+msgctxt "#31994"
+msgid "Show audio channel-layout artwork"
+msgstr ""

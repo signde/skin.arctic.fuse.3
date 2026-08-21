@@ -74,6 +74,11 @@
         <value condition="String.IsEqual(ListItem.AudioCodec,dtshd_ma_x_imax) | [[String.IsEqual(ListItem.AudioCodec,dtshd) | String.IsEqual(ListItem.AudioCodec,dtshd_ma) | String.IsEqual(ListItem.AudioCodec,dtshd_ma_x) | String.IsEqual(ListItem.AudioCodec,dtsx) | String.IsEqual(ListItem.AudioCodec,dts_x)] + [String.Contains(ListItem.FileNameAndPath,DTS-X) | String.Contains(ListItem.FileNameAndPath,DTSX) | String.Contains(ListItem.FileNameAndPath,DTS:X)] + String.Contains(ListItem.FileNameAndPath,IMAX)]">flags/color/audio/dtshd_ma_x_imax.png</value>
         <value condition="[String.IsEqual(ListItem.AudioCodec,dtshd) | String.IsEqual(ListItem.AudioCodec,dtshd_ma)] + [String.Contains(ListItem.FileNameAndPath,DTS-X) | String.Contains(ListItem.FileNameAndPath,DTSX) | String.Contains(ListItem.FileNameAndPath,DTS:X)]">flags/color/audio/dtsx.png</value>
         <value condition="String.IsEqual(ListItem.AudioCodec,dtshd_ma_x) | String.IsEqual(ListItem.AudioCodec,dtsx) | String.IsEqual(ListItem.AudioCodec,dts_x)">flags/color/audio/dtsx.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,aif) | String.IsEqual(ListItem.AudioCodec,aifc)">flags/color/audio/aiff.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,dtsma)">flags/color/audio/dtshd_ma.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,mp3float)">flags/color/audio/mp3.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,ogg)">flags/color/audio/vorbis.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,pcm_bluray)">flags/color/audio/pcm.png</value>
         <value condition="String.IsEqual(ListItem.AudioCodec,wavpack)">flags/color/audio/wv.png</value>
         <value>$INFO[ListItem.AudioCodec,flags/color/audio/,.png]</value>
     </variable>
@@ -86,8 +91,13 @@
 
     <variable name="Image_Furniture_VideoCodec">
         <value condition="String.IsEqual(ListItem.VideoCodec,av1)">flags/color/source/av1.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,hev1)">flags/color/source/hevc.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,mpeg1)">flags/color/source/mpeg1video.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,mpeg2)">flags/color/source/mpeg2video.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,vc-1)">flags/color/source/vc1.png</value>
         <value condition="String.IsEqual(ListItem.VideoCodec,vp8)">flags/color/source/vp8.png</value>
         <value condition="String.IsEqual(ListItem.VideoCodec,vp9) | String.IsEqual(ListItem.VideoCodec,vp9.2) | String.IsEqual(ListItem.VideoCodec,vp09)">flags/color/source/vp9.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,wmv)">flags/color/source/wmv3.png</value>
         <value>$INFO[ListItem.VideoCodec,flags/color/source/,.png]</value>
     </variable>
 
