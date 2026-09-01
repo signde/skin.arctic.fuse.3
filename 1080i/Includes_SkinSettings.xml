@@ -303,7 +303,7 @@
             <param name="id">001</param>
             <label>$LOCALIZE[31239]</label>
         </include>
-        <!-- <include content="Settings_Button" description="Codecs">
+        <include content="Settings_Button" description="Codecs">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -313,7 +313,7 @@
             <label>$LOCALIZE[31207]</label>
             <onclick>Skin.ToggleSetting(Footer.EnableCodecs)</onclick>
             <selected>Skin.HasSetting(Footer.EnableCodecs)</selected>
-        </include> -->
+        </include>
         <include content="Settings_Button" description="Now Playing">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
@@ -930,18 +930,6 @@
             <onclick condition="String.IsEmpty(Skin.String(SeasonalTheme.PropsDensity))">Skin.SetString(SeasonalTheme.PropsDensity,High)</onclick>
             <visible>Skin.HasSetting(SeasonalTheme.Enable)</visible>
         </include>
-        <include content="Settings_Button" description="Holiday Theme: Halloween">
-            <param name="dialog">false</param>
-            <param name="window">skinsettings</param>
-            <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">015</param>
-            <param name="control">radiobutton</param>
-            <label>Halloween</label>
-            <onclick>Skin.ToggleSetting(HolidayMode.Halloween)</onclick>
-            <selected>Skin.HasSetting(HolidayMode.Halloween)</selected>
-            <visible>Skin.HasSetting(EnableHolidayTheme)</visible>
-        </include>
-
         <include content="Settings_Label" description="Expert">
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>

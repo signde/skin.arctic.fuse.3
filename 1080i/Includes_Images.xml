@@ -72,6 +72,53 @@
         <value>special://skin/extras/icons/comment.png</value>
     </variable>
 
+    <variable name="Image_Furniture_AudioCodec">
+        <value condition="[String.IsEqual(ListItem.AudioCodec,truehd) | String.IsEqual(ListItem.AudioCodec,eac3)] + [String.Contains(ListItem.FileNameAndPath,Atmos) | String.Contains(ListItem.FileNameAndPath,.Atmos.)]">resource://resource.images.mediaflags.signde/color/audio/atmos.png</value>
+        <value condition="String.Contains(ListItem.AudioCodec,atmos)">resource://resource.images.mediaflags.signde/color/audio/atmos.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,truehd_atmos) | String.IsEqual(ListItem.AudioCodec,eac3_ddp_atmos)">resource://resource.images.mediaflags.signde/color/audio/atmos.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,dtshd_ma_x_imax) | [[String.IsEqual(ListItem.AudioCodec,dtshd) | String.IsEqual(ListItem.AudioCodec,dtshd_ma) | String.IsEqual(ListItem.AudioCodec,dtshd_ma_x) | String.IsEqual(ListItem.AudioCodec,dtsx) | String.IsEqual(ListItem.AudioCodec,dts_x)] + [String.Contains(ListItem.FileNameAndPath,DTS-X) | String.Contains(ListItem.FileNameAndPath,DTSX) | String.Contains(ListItem.FileNameAndPath,DTS:X)] + String.Contains(ListItem.FileNameAndPath,IMAX)]">resource://resource.images.mediaflags.signde/color/audio/dtshd_ma_x_imax.png</value>
+        <value condition="[String.IsEqual(ListItem.AudioCodec,dtshd) | String.IsEqual(ListItem.AudioCodec,dtshd_ma)] + [String.Contains(ListItem.FileNameAndPath,DTS-X) | String.Contains(ListItem.FileNameAndPath,DTSX) | String.Contains(ListItem.FileNameAndPath,DTS:X)]">resource://resource.images.mediaflags.signde/color/audio/dtsx.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,dtshd_ma_x) | String.IsEqual(ListItem.AudioCodec,dtsx) | String.IsEqual(ListItem.AudioCodec,dts_x)">resource://resource.images.mediaflags.signde/color/audio/dtsx.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,aif) | String.IsEqual(ListItem.AudioCodec,aifc)">resource://resource.images.mediaflags.signde/color/audio/aiff.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,dtsma)">resource://resource.images.mediaflags.signde/color/audio/dtshd_ma.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,mp3float)">resource://resource.images.mediaflags.signde/color/audio/mp3.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,ogg)">resource://resource.images.mediaflags.signde/color/audio/vorbis.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,pcm_bluray)">resource://resource.images.mediaflags.signde/color/audio/pcm.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,wavpack)">resource://resource.images.mediaflags.signde/color/audio/wv.png</value>
+        <value>$INFO[ListItem.AudioCodec,resource://resource.images.mediaflags.signde/color/audio/,.png]</value>
+    </variable>
+
+    <variable name="Image_Furniture_HDRType">
+        <value condition="String.IsEqual(ListItem.HdrType,dolbyvision) + String.StartsWith(ListItem.DvProfile,7.) + String.Contains(ListItem.DvProfile,FEL)">resource://resource.images.mediaflags.signde/color/hdr/dolbyvision_fel.png</value>
+        <value condition="String.IsEqual(ListItem.HdrType,dolbyvision) + String.StartsWith(ListItem.DvProfile,7.) + String.Contains(ListItem.DvProfile,MEL)">resource://resource.images.mediaflags.signde/color/hdr/dolbyvision_mel.png</value>
+        <value condition="String.IsEqual(ListItem.HdrType,dolbyvision) | String.Contains(ListItem.FileNameAndPath,Dolby Vision) | String.Contains(ListItem.FileNameAndPath,DolbyVision) | String.Contains(ListItem.FileNameAndPath,DOVI) | String.Contains(ListItem.FileNameAndPath,DoVi) | String.Contains(ListItem.FileNameAndPath,.DV.) | String.Contains(ListItem.FileNameAndPath, DV ) | String.Contains(ListItem.FileNameAndPath,-DV) | String.Contains(ListItem.FileNameAndPath,_DV)">resource://resource.images.mediaflags.signde/color/hdr/dolbyvision.png</value>
+        <value condition="String.IsEqual(ListItem.HdrType,hdr10) + [String.Contains(ListItem.FileNameAndPath,hdr10plus) | String.Contains(ListItem.FileNameAndPath,HDR10Plus) | String.Contains(ListItem.FileNameAndPath,HDR10PLUS) | String.Contains(ListItem.FileNameAndPath,HDR10P)]">resource://resource.images.mediaflags.signde/color/hdr/hdr10plus.png</value>
+        <value>$INFO[ListItem.HdrType,resource://resource.images.mediaflags.signde/color/hdr/,.png]</value>
+    </variable>
+
+    <variable name="Image_Furniture_VideoCodec">
+        <value condition="String.IsEqual(ListItem.VideoCodec,av1)">resource://resource.images.mediaflags.signde/color/source/av1.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,hev1)">resource://resource.images.mediaflags.signde/color/source/hevc.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,mpeg1)">resource://resource.images.mediaflags.signde/color/source/mpeg1video.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,mpeg2)">resource://resource.images.mediaflags.signde/color/source/mpeg2video.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,vc-1)">resource://resource.images.mediaflags.signde/color/source/vc1.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,vp8)">resource://resource.images.mediaflags.signde/color/source/vp8.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,vp9) | String.IsEqual(ListItem.VideoCodec,vp9.2) | String.IsEqual(ListItem.VideoCodec,vp09)">resource://resource.images.mediaflags.signde/color/source/vp9.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,wmv)">resource://resource.images.mediaflags.signde/color/source/wmv3.png</value>
+        <value>$INFO[ListItem.VideoCodec,resource://resource.images.mediaflags.signde/color/source/,.png]</value>
+    </variable>
+
+    <variable name="Image_Furniture_SourceQuality">
+        <value condition="[[String.IsEqual(ListItem.VideoResolution,4K) | String.Contains(ListItem.FileNameAndPath,4K) | String.Contains(ListItem.FileNameAndPath,2160p) | String.Contains(ListItem.FileNameAndPath,2160P) | String.Contains(ListItem.FileNameAndPath,UHD) | String.Contains(ListItem.FileNameAndPath,uhd) | String.Contains(ListItem.FileNameAndPath,UltraHD) | String.Contains(ListItem.FileNameAndPath,Ultra HD)] + [String.Contains(ListItem.FileNameAndPath,remux) | String.Contains(ListItem.FileNameAndPath,Remux) | String.Contains(ListItem.FileNameAndPath,REMUX) | String.Contains(ListItem.FileNameAndPath,blu-ray) | String.Contains(ListItem.FileNameAndPath,BluRay) | String.Contains(ListItem.FileNameAndPath,BLURAY) | String.Contains(ListItem.FileNameAndPath,bluray) | String.Contains(ListItem.FileNameAndPath,bdrip) | String.Contains(ListItem.FileNameAndPath,BDRip) | String.Contains(ListItem.FileNameAndPath,brrip) | String.Contains(ListItem.FileNameAndPath,BRRip) | String.Contains(ListItem.FileNameAndPath,bdmv) | String.Contains(ListItem.FileNameAndPath,BDMV) | String.Contains(ListItem.FileNameAndPath,bd66) | String.Contains(ListItem.FileNameAndPath,BD66) | String.Contains(ListItem.FileNameAndPath,bd100) | String.Contains(ListItem.FileNameAndPath,BD100)]]">resource://resource.images.mediaflags.signde/color/source/ultrahd.png</value>
+        <value condition="String.Contains(ListItem.FileNameAndPath,webtv) | String.Contains(ListItem.FileNameAndPath,WEBTV) | String.Contains(ListItem.FileNameAndPath,WebTV) | String.Contains(ListItem.FileNameAndPath,web-tv) | String.Contains(ListItem.FileNameAndPath,WEB-TV) | String.Contains(ListItem.FileNameAndPath,Web-TV)">resource://resource.images.mediaflags.signde/color/source/webtv.png</value>
+        <value condition="String.Contains(ListItem.FileNameAndPath,web-dl) | String.Contains(ListItem.FileNameAndPath,WEB-DL) | String.Contains(ListItem.FileNameAndPath,Web-DL) | String.Contains(ListItem.FileNameAndPath,webdl) | String.Contains(ListItem.FileNameAndPath,WEBDL) | String.Contains(ListItem.FileNameAndPath,WebDL) | String.Contains(ListItem.FileNameAndPath,webrip) | String.Contains(ListItem.FileNameAndPath,WEBRip) | String.Contains(ListItem.FileNameAndPath,WEBRIP) | String.Contains(ListItem.FileNameAndPath,web-rip) | String.Contains(ListItem.FileNameAndPath,WEB-RIP)">resource://resource.images.mediaflags.signde/color/source/web-dl.png</value>
+        <value condition="String.Contains(ListItem.FileNameAndPath,hddvd) | String.Contains(ListItem.FileNameAndPath,HDDVD) | String.Contains(ListItem.FileNameAndPath,HD-DVD) | String.Contains(ListItem.FileNameAndPath,HD DVD)">resource://resource.images.mediaflags.signde/color/source/hddvd.png</value>
+        <value condition="String.Contains(ListItem.FileNameAndPath,remux) | String.Contains(ListItem.FileNameAndPath,Remux) | String.Contains(ListItem.FileNameAndPath,REMUX) | String.Contains(ListItem.FileNameAndPath,blu-ray) | String.Contains(ListItem.FileNameAndPath,BluRay) | String.Contains(ListItem.FileNameAndPath,BLURAY) | String.Contains(ListItem.FileNameAndPath,bluray) | String.Contains(ListItem.FileNameAndPath,bdrip) | String.Contains(ListItem.FileNameAndPath,BDRip) | String.Contains(ListItem.FileNameAndPath,brrip) | String.Contains(ListItem.FileNameAndPath,BRRip) | String.Contains(ListItem.FileNameAndPath,bd25) | String.Contains(ListItem.FileNameAndPath,BD25) | String.Contains(ListItem.FileNameAndPath,bd50) | String.Contains(ListItem.FileNameAndPath,BD50) | String.Contains(ListItem.FileNameAndPath,bdmv) | String.Contains(ListItem.FileNameAndPath,BDMV)">resource://resource.images.mediaflags.signde/color/source/bluray.png</value>
+        <value condition="String.Contains(ListItem.FileNameAndPath,dvd) | String.Contains(ListItem.FileNameAndPath,DVD) | String.Contains(ListItem.FileNameAndPath,.DVD.) | String.Contains(ListItem.FileNameAndPath, DVD ) | String.Contains(ListItem.FileNameAndPath,-DVD) | String.Contains(ListItem.FileNameAndPath,_DVD) | String.EndsWith(ListItem.FileNameAndPath,dvd) | String.EndsWith(ListItem.FileNameAndPath,DVD) | String.EndsWith(ListItem.FileNameAndPath,.ifo) | String.EndsWith(ListItem.FileNameAndPath,.IFO) | String.EndsWith(ListItem.FileNameAndPath,.iso) | String.EndsWith(ListItem.FileNameAndPath,.ISO) | String.Contains(ListItem.FileNameAndPath,dvdrip) | String.Contains(ListItem.FileNameAndPath,DVDRip) | String.Contains(ListItem.FileNameAndPath,DVDRIP)">resource://resource.images.mediaflags.signde/color/source/dvd.png</value>
+        <value condition="String.Contains(ListItem.FileNameAndPath,sdtv) | String.Contains(ListItem.FileNameAndPath,SDTV) | String.Contains(ListItem.FileNameAndPath,sd-tv) | String.Contains(ListItem.FileNameAndPath,SD-TV) | String.Contains(ListItem.FileNameAndPath,pdtv) | String.Contains(ListItem.FileNameAndPath,PDTV)">resource://resource.images.mediaflags.signde/color/source/sdtv.png</value>
+        <value condition="String.Contains(ListItem.FileNameAndPath,hdtv) | String.Contains(ListItem.FileNameAndPath,HDTV) | String.Contains(ListItem.FileNameAndPath,dsr) | String.Contains(ListItem.FileNameAndPath,DSR)">resource://resource.images.mediaflags.signde/color/source/hdtv.png</value>
+    </variable>
+
     <variable name="Image_VideoOSD_PersonCredits">
         <value condition="Skin.String(VideoOSD.PersonCredits.WidgetInfo,crew)">special://skin/extras/icons/clapperboard.png</value>
         <value condition="Skin.String(VideoOSD.PersonCredits.WidgetInfo,both)">special://skin/extras/icons/video.png</value>
@@ -744,4 +791,43 @@
         <value condition="String.IsEqual(Control.GetLabel(12),$LOCALIZE[31032])">special://skin/extras/icons/circle-plus.png</value>
         <value>special://skin/extras/icons/circle-dot.png</value>
     </variable>
+
+    <variable name="Image_OSD_SourceAudioCodec">
+        <value condition="[String.IsEqual(VideoPlayer.AudioCodec,truehd) | String.IsEqual(VideoPlayer.AudioCodec,eac3)] + [String.Contains(Player.FileNameAndPath,Atmos) | String.Contains(Player.FileNameAndPath,.Atmos.)]">resource://resource.images.mediaflags.signde/color/audio/atmos.png</value>
+        <value condition="String.Contains(VideoPlayer.AudioCodec,atmos)">resource://resource.images.mediaflags.signde/color/audio/atmos.png</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,truehd_atmos) | String.IsEqual(VideoPlayer.AudioCodec,eac3_ddp_atmos)">resource://resource.images.mediaflags.signde/color/audio/atmos.png</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x_imax) | [[String.IsEqual(VideoPlayer.AudioCodec,dtshd) | String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma) | String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x) | String.IsEqual(VideoPlayer.AudioCodec,dtsx) | String.IsEqual(VideoPlayer.AudioCodec,dts_x)] + [String.Contains(Player.FileNameAndPath,DTS-X) | String.Contains(Player.FileNameAndPath,DTSX) | String.Contains(Player.FileNameAndPath,DTS:X)] + String.Contains(Player.FileNameAndPath,IMAX)]">resource://resource.images.mediaflags.signde/color/audio/dtshd_ma_x_imax.png</value>
+        <value condition="[String.IsEqual(VideoPlayer.AudioCodec,dtshd) | String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma)] + [String.Contains(Player.FileNameAndPath,DTS-X) | String.Contains(Player.FileNameAndPath,DTSX) | String.Contains(Player.FileNameAndPath,DTS:X)]">resource://resource.images.mediaflags.signde/color/audio/dtsx.png</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x) | String.IsEqual(VideoPlayer.AudioCodec,dtsx) | String.IsEqual(VideoPlayer.AudioCodec,dts_x)">resource://resource.images.mediaflags.signde/color/audio/dtsx.png</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,aif) | String.IsEqual(VideoPlayer.AudioCodec,aifc)">resource://resource.images.mediaflags.signde/color/audio/aiff.png</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,dtsma)">resource://resource.images.mediaflags.signde/color/audio/dtshd_ma.png</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,mp3float)">resource://resource.images.mediaflags.signde/color/audio/mp3.png</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,ogg)">resource://resource.images.mediaflags.signde/color/audio/vorbis.png</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,pcm_bluray)">resource://resource.images.mediaflags.signde/color/audio/pcm.png</value>
+        <value condition="String.IsEqual(VideoPlayer.AudioCodec,wavpack)">resource://resource.images.mediaflags.signde/color/audio/wv.png</value>
+        <value>$INFO[VideoPlayer.AudioCodec,resource://resource.images.mediaflags.signde/color/audio/,.png]</value>
+    </variable>
+
+    <variable name="Image_OSD_SourceVideoCodec">
+        <value condition="String.IsEqual(VideoPlayer.VideoCodec,av1)">resource://resource.images.mediaflags.signde/color/source/av1.png</value>
+        <value condition="String.IsEqual(VideoPlayer.VideoCodec,hev1)">resource://resource.images.mediaflags.signde/color/source/hevc.png</value>
+        <value condition="String.IsEqual(VideoPlayer.VideoCodec,mpeg1)">resource://resource.images.mediaflags.signde/color/source/mpeg1video.png</value>
+        <value condition="String.IsEqual(VideoPlayer.VideoCodec,mpeg2)">resource://resource.images.mediaflags.signde/color/source/mpeg2video.png</value>
+        <value condition="String.IsEqual(VideoPlayer.VideoCodec,vc-1)">resource://resource.images.mediaflags.signde/color/source/vc1.png</value>
+        <value condition="String.IsEqual(VideoPlayer.VideoCodec,vp8)">resource://resource.images.mediaflags.signde/color/source/vp8.png</value>
+        <value condition="String.IsEqual(VideoPlayer.VideoCodec,vp9) | String.IsEqual(VideoPlayer.VideoCodec,vp9.2) | String.IsEqual(VideoPlayer.VideoCodec,vp09)">resource://resource.images.mediaflags.signde/color/source/vp9.png</value>
+        <value condition="String.IsEqual(VideoPlayer.VideoCodec,wmv)">resource://resource.images.mediaflags.signde/color/source/wmv3.png</value>
+        <value>$INFO[VideoPlayer.VideoCodec,resource://resource.images.mediaflags.signde/color/source/,.png]</value>
+    </variable>
+
+    <!-- Playback flags describe the source even when VS10 converts the output. -->
+    <variable name="Image_OSD_SourceHDRType">
+        <value condition="String.Contains(Player.Process(video.source.hdr.type),Dolby Vision) + String.Contains(Player.Process(video.dovi.el.type),full)">resource://resource.images.mediaflags.signde/color/hdr/dolbyvision_fel.png</value>
+        <value condition="String.Contains(Player.Process(video.source.hdr.type),Dolby Vision) + String.Contains(Player.Process(video.dovi.el.type),minimum)">resource://resource.images.mediaflags.signde/color/hdr/dolbyvision_mel.png</value>
+        <value condition="String.Contains(Player.Process(video.source.hdr.type),Dolby Vision)">resource://resource.images.mediaflags.signde/color/hdr/dolbyvision.png</value>
+        <value condition="String.Contains(Player.Process(video.source.hdr.type),HDR10) + !String.IsEqual(Player.Process(video.source.hdr.type),HDR10)">resource://resource.images.mediaflags.signde/color/hdr/hdr10plus.png</value>
+        <value condition="String.IsEqual(Player.Process(video.source.hdr.type),HDR10)">resource://resource.images.mediaflags.signde/color/hdr/hdr10.png</value>
+        <value condition="String.IsEqual(Player.Process(video.source.hdr.type),HLG)">resource://resource.images.mediaflags.signde/color/hdr/hlg.png</value>
+    </variable>
+
 </includes>
