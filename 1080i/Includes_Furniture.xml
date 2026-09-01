@@ -24,7 +24,6 @@
         <value condition="!Skin.HasSetting(Header.DisableWeather)">$INFO[Weather.Temperature]</value>
     </variable>
     <include name="Furniture_Header_Right">
-        <visible>![Skin.HasSetting(osd.userightCodecLogos) + [Window.IsActive(VideoOSD.xml) | Window.IsActive(VideoFullScreen.xml)]]</visible>
         <control type="group">
             <right>0</right>
             <width>720</width>
@@ -141,7 +140,7 @@
             <itemgap>20</itemgap>
             <include>Furniture_SlidesOver</include>
             <visible>!Player.HasMedia | Skin.HasSetting(Footer.DisableNowPlaying)</visible>
-            <visible>String.IsEmpty(ListItem.VideoCodec) | !Skin.HasSetting(Footer.EnableCodecs)</visible>
+            <visible>!Skin.HasSetting(Footer.EnableCodecs)</visible>
             <control type="image">
                 <width>300</width>
                 <height>80</height>
@@ -154,57 +153,103 @@
     <include name="Furniture_Codecs">
         <param name="colordiffuse">white</param>
         <param name="infolabel_videoresolution">ListItem.VideoResolution</param>
+        <param name="infolabel_hdrtype">ListItem.HdrType</param>
         <param name="infolabel_videoaspect">ListItem.VideoAspect</param>
         <param name="infolabel_videocodec">ListItem.VideoCodec</param>
         <param name="infolabel_audiocodec">ListItem.AudioCodec</param>
         <param name="infolabel_audiochannels">ListItem.AudioChannels</param>
         <param name="align">right</param>
         <param name="itemgap">20</param>
+        <param name="mediaflag_width">85</param>
+        <param name="mediaflag_height">58</param>
         <definition>
             <control type="grouplist">
+                <visible>!Player.HasMedia | Skin.HasSetting(Footer.DisableNowPlaying)</visible>
                 <visible>!String.IsEmpty($PARAM[infolabel_videoresolution])</visible>
                 <orientation>horizontal</orientation>
                 <align>$PARAM[align]</align>
                 <itemgap>$PARAM[itemgap]</itemgap>
                 <control type="image">
+                    <width>300</width>
+                    <height>48</height>
+                    <aspectratio align="right">keep</aspectratio>
+                    <texture background="true">$VAR[Image_CombinedStudio]</texture>
+                    <centertop>50%</centertop>
+                    <visible>!Skin.HasSetting(Footer.DisableStudio)</visible>
+                </control>
+                <control type="image" id="77880">
+                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">$VAR[Image_Furniture_HDRType]</texture>
+                    <aspectratio>keep</aspectratio>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
+                    <centertop>50%</centertop>
+                    <visible>!String.IsEmpty(Control.GetLabel(77880))</visible>
+                </control>
+                <control type="image" id="77881">
+                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">$VAR[Image_Furniture_SourceQuality]</texture>
+                    <aspectratio>keep</aspectratio>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
+                    <centertop>50%</centertop>
+                    <visible>!String.IsEmpty(Control.GetLabel(77881))</visible>
+                </control>
+                <control type="image">
                     <texture background="true" colordiffuse="$PARAM[colordiffuse]">$INFO[$PARAM[infolabel_videoresolution],flags/color/resolution/,.png]</texture>
                     <aspectratio>keep</aspectratio>
-                    <height>48</height>
-                    <width>66</width>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
                     <centertop>50%</centertop>
                     <visible>!String.IsEmpty($PARAM[infolabel_videoresolution])</visible>
                 </control>
                 <control type="image">
                     <texture background="true" colordiffuse="$PARAM[colordiffuse]">$INFO[$PARAM[infolabel_videoaspect],flags/color/aspectratio/,.png]</texture>
                     <aspectratio>keep</aspectratio>
-                    <height>48</height>
-                    <width>71</width>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
                     <centertop>50%</centertop>
                     <visible>!String.IsEmpty($PARAM[infolabel_videoaspect])</visible>
                 </control>
                 <control type="image">
-                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">$INFO[$PARAM[infolabel_videocodec],flags/color/source/,.png]</texture>
+                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">$VAR[Image_Furniture_VideoCodec]</texture>
                     <aspectratio>keep</aspectratio>
-                    <height>48</height>
-                    <width>71</width>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
                     <centertop>50%</centertop>
                     <visible>!String.IsEmpty($PARAM[infolabel_videocodec])</visible>
                 </control>
                 <control type="image">
-                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">$INFO[$PARAM[infolabel_audiocodec],flags/color/audio/,.png]</texture>
+                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">$VAR[Image_Furniture_AudioCodec]</texture>
                     <aspectratio>keep</aspectratio>
-                    <height>48</height>
-                    <width>71</width>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
                     <centertop>50%</centertop>
                     <visible>!String.IsEmpty($PARAM[infolabel_audiocodec])</visible>
                 </control>
                 <control type="image">
+                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">flags/color/channels/5.1.4.png</texture>
+                    <aspectratio>keep</aspectratio>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
+                    <centertop>50%</centertop>
+                    <visible>Integer.IsEqual($PARAM[infolabel_audiochannels],6) + [String.IsEqual($PARAM[infolabel_audiocodec],eac3_ddp_atmos) | [String.IsEqual($PARAM[infolabel_audiocodec],eac3) + [String.Contains(ListItem.FileNameAndPath,Atmos) | String.Contains(ListItem.FileNameAndPath,.Atmos.) | String.Contains(Player.FileNameAndPath,Atmos) | String.Contains(Player.FileNameAndPath,.Atmos.)]]]</visible>
+                </control>
+                <control type="image">
+                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">flags/color/channels/7.1.4.png</texture>
+                    <aspectratio>keep</aspectratio>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
+                    <centertop>50%</centertop>
+                    <visible>Integer.IsEqual($PARAM[infolabel_audiochannels],8) + [String.IsEqual($PARAM[infolabel_audiocodec],truehd_atmos) | [String.IsEqual($PARAM[infolabel_audiocodec],truehd) + [String.Contains(ListItem.FileNameAndPath,Atmos) | String.Contains(ListItem.FileNameAndPath,.Atmos.) | String.Contains(Player.FileNameAndPath,Atmos) | String.Contains(Player.FileNameAndPath,.Atmos.)]] | String.IsEqual($PARAM[infolabel_audiocodec],dtshd_ma_x) | String.IsEqual($PARAM[infolabel_audiocodec],dtshd_ma_x_imax) | String.IsEqual($PARAM[infolabel_audiocodec],dtsx) | String.IsEqual($PARAM[infolabel_audiocodec],dts_x) | [[String.IsEqual($PARAM[infolabel_audiocodec],dtshd) | String.IsEqual($PARAM[infolabel_audiocodec],dtshd_ma)] + [String.Contains(ListItem.FileNameAndPath,DTS-X) | String.Contains(ListItem.FileNameAndPath,DTSX) | String.Contains(ListItem.FileNameAndPath,DTS:X) | String.Contains(Player.FileNameAndPath,DTS-X) | String.Contains(Player.FileNameAndPath,DTSX) | String.Contains(Player.FileNameAndPath,DTS:X)]]]</visible>
+                </control>
+                <control type="image">
                     <texture background="true" colordiffuse="$PARAM[colordiffuse]">$INFO[$PARAM[infolabel_audiochannels],flags/color/channels/,.png]</texture>
                     <aspectratio>keep</aspectratio>
-                    <height>48</height>
-                    <width>71</width>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
                     <centertop>50%</centertop>
                     <visible>!String.IsEmpty($PARAM[infolabel_audiochannels])</visible>
+                    <visible>![Integer.IsEqual($PARAM[infolabel_audiochannels],6) + [String.IsEqual($PARAM[infolabel_audiocodec],eac3_ddp_atmos) | [String.IsEqual($PARAM[infolabel_audiocodec],eac3) + [String.Contains(ListItem.FileNameAndPath,Atmos) | String.Contains(ListItem.FileNameAndPath,.Atmos.) | String.Contains(Player.FileNameAndPath,Atmos) | String.Contains(Player.FileNameAndPath,.Atmos.)]]]]</visible>
+                    <visible>![Integer.IsEqual($PARAM[infolabel_audiochannels],8) + [String.IsEqual($PARAM[infolabel_audiocodec],truehd_atmos) | [String.IsEqual($PARAM[infolabel_audiocodec],truehd) + [String.Contains(ListItem.FileNameAndPath,Atmos) | String.Contains(ListItem.FileNameAndPath,.Atmos.) | String.Contains(Player.FileNameAndPath,Atmos) | String.Contains(Player.FileNameAndPath,.Atmos.)]] | String.IsEqual($PARAM[infolabel_audiocodec],dtshd_ma_x) | String.IsEqual($PARAM[infolabel_audiocodec],dtshd_ma_x_imax) | String.IsEqual($PARAM[infolabel_audiocodec],dtsx) | String.IsEqual($PARAM[infolabel_audiocodec],dts_x) | [[String.IsEqual($PARAM[infolabel_audiocodec],dtshd) | String.IsEqual($PARAM[infolabel_audiocodec],dtshd_ma)] + [String.Contains(ListItem.FileNameAndPath,DTS-X) | String.Contains(ListItem.FileNameAndPath,DTSX) | String.Contains(ListItem.FileNameAndPath,DTS:X) | String.Contains(Player.FileNameAndPath,DTS-X) | String.Contains(Player.FileNameAndPath,DTSX) | String.Contains(Player.FileNameAndPath,DTS:X)]]]]</visible>
                 </control>
             </control>
         </definition>
@@ -230,7 +275,7 @@
             </include>
             <include content="View_Furniture_Footer_ViewLine" condition="$EXP[Exp_PlainBackgroundWindows]">
                 <param name="visible">true</param>
-                <param name="label">$INFO[System.AddonVersion(skin.arctic.fuse.3),Arctic Fuse 3 • v, (p3i)]</param>
+                <param name="label">$INFO[System.AddonVersion(skin.arctic.fuse.3),Arctic Fuse 3 • v, (avdvplus/p3i)]</param>
             </include>
         </control>
     </include>

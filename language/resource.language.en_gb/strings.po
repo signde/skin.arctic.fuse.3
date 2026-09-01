@@ -2609,19 +2609,19 @@ msgid "cd/m²"
 msgstr ""
 
 msgctxt "#31941"
-msgid "RPU MDL"
+msgid "Source Min/Max"
 msgstr ""
 
 msgctxt "#31942"
-msgid "RPU MaxCLL/FALL"
+msgid "L6 CLL/FALL"
 msgstr ""
 
 msgctxt "#31943"
-msgid "FLL MIN / MAX / Ø"
+msgid "L1 Min/Max/Avg"
 msgstr ""
 
 msgctxt "#31944"
-msgid "PQ  MIN / MAX / Ø"
+msgid "L1 PQ Min/Max/Avg"
 msgstr ""
 
 msgctxt "#31945"
@@ -2810,4 +2810,28 @@ msgstr ""
 
 msgctxt "#31993"
 msgid "running"
+msgstr ""
+
+msgctxt "#31994"
+msgid "Show audio channel-layout artwork"
+msgstr ""
+
+msgctxt "#31995"
+msgid "Letterbox offset"
+msgstr ""
+
+msgctxt "#31996"
+msgid "Dialog normalization"
+msgstr ""
+
+msgctxt "#31997"
+msgid "L6 MDL"
+msgstr ""
+
+msgctxt "#31998"
+msgid "Source PQ"
+msgstr ""
+
+msgctxt "#31999"
+msgid "Objects"
 msgstr ""
