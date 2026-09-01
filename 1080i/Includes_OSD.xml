@@ -775,7 +775,7 @@
         <param name="include_fps">true</param>
         <param name="textcolor_sub">panel_fg_70</param>
         <param name="textcolor_top">panel_fg_90</param>
-        <param name="itemgap">15</param>
+        <param name="itemgap">8</param>
         <param name="align">center</param>
         <definition>
             <control type="group">
@@ -783,7 +783,13 @@
                 <height>80</height>
 
                 <include content="Furniture_Codecs">
-                    <param name="colordiffuse">$PARAM[textcolor_top]</param>
+                    <param name="colordiffuse">white</param>
+                    <param name="visible">true</param>
+                    <param name="show_studio">false</param>
+                    <param name="show_sourcequality">false</param>
+                    <param name="image_hdrtype">$VAR[Image_OSD_SourceHDRType]</param>
+                    <param name="image_videocodec">$VAR[Image_OSD_SourceVideoCodec]</param>
+                    <param name="image_audiocodec">$VAR[Image_OSD_SourceAudioCodec]</param>
                     <param name="infolabel_videoresolution">VideoPlayer.VideoResolution</param>
                     <param name="infolabel_videoaspect">VideoPlayer.VideoAspect</param>
                     <param name="infolabel_videocodec">VideoPlayer.VideoCodec</param>
@@ -791,6 +797,8 @@
                     <param name="infolabel_audiochannels">VideoPlayer.AudioChannels</param>
                     <param name="itemgap">$PARAM[itemgap]</param>
                     <param name="align">$PARAM[align]</param>
+                    <param name="mediaflag_width">64</param>
+                    <param name="mediaflag_height">48</param>
                 </include>
 
                 <!-- <include content="Object_InfoCircle">
@@ -1347,5 +1355,4 @@
         </definition>
     </include>
 </includes>
-
 
