@@ -1233,7 +1233,7 @@
         },
         {
             "name": "Add-ons Browser",
-            "path": "ActivateWindow(addonbrowser)",
+            "path": "ReplaceWindow(addonbrowser)",
             "icon": "special://skin/extras/icons/addons.png",
             "link": "true"
         },
