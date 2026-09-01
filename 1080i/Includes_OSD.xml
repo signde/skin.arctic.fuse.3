@@ -791,6 +791,8 @@
                     <param name="infolabel_audiochannels">VideoPlayer.AudioChannels</param>
                     <param name="itemgap">$PARAM[itemgap]</param>
                     <param name="align">$PARAM[align]</param>
+                    <param name="mediaflag_width">71</param>
+                    <param name="mediaflag_height">48</param>
                 </include>
 
                 <!-- <include content="Object_InfoCircle">
@@ -1347,5 +1349,4 @@
         </definition>
     </include>
 </includes>
-
 
