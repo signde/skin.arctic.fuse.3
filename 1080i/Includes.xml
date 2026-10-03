@@ -97,4 +97,5 @@
 
     <include file="Includes_Overlay.xml" />
     <include file="Includes_Fallbacks.xml" />
+    <include file="Includes_SigndeMediaFlags.xml" />
 </includes>
