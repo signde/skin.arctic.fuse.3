@@ -619,6 +619,13 @@
                 "$LOCALIZE[19033]"
             ]
         },
+        "interface_codecs": {
+            "label": "$LOCALIZE[31207]",
+            "control": "radiobutton",
+            "group": "interface_footer",
+            "selected": "Skin.HasSetting(Footer.EnableCodecs)",
+            "onclick": [{"action": "Skin.ToggleSetting(Footer.EnableCodecs)"}]
+        },
         "interface_now_playing": {
             "label": "$LOCALIZE[31244]",
             "control": "radiobutton",
