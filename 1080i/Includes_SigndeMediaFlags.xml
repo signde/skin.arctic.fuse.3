@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <expression name="Signde_HDRType_0">String.IsEqual(ListItem.HdrType,dolbyvision) | String.Contains(ListItem.FileNameAndPath,Dolby Vision) | String.Contains(ListItem.FileNameAndPath,DolbyVision) | String.Contains(ListItem.FileNameAndPath,DOVI) | String.Contains(ListItem.FileNameAndPath,DoVi) | String.Contains(ListItem.FileNameAndPath,.DV.) | String.Contains(ListItem.FileNameAndPath, DV ) | String.Contains(ListItem.FileNameAndPath,-DV) | String.Contains(ListItem.FileNameAndPath,_DV)</expression>
+    <expression name="Signde_HDRType_1">String.IsEqual(ListItem.HdrType,hdr10) + [String.Contains(ListItem.FileNameAndPath,hdr10plus) | String.Contains(ListItem.FileNameAndPath,HDR10Plus) | String.Contains(ListItem.FileNameAndPath,HDR10PLUS) | String.Contains(ListItem.FileNameAndPath,HDR10P)]</expression>
+    <expression name="Signde_SourceQuality_0">[[String.IsEqual(ListItem.VideoResolution,4K) | String.Contains(ListItem.FileNameAndPath,4K) | String.Contains(ListItem.FileNameAndPath,2160p) | String.Contains(ListItem.FileNameAndPath,2160P) | String.Contains(ListItem.FileNameAndPath,UHD) | String.Contains(ListItem.FileNameAndPath,uhd) | String.Contains(ListItem.FileNameAndPath,UltraHD) | String.Contains(ListItem.FileNameAndPath,Ultra HD)] + [String.Contains(ListItem.FileNameAndPath,remux) | String.Contains(ListItem.FileNameAndPath,Remux) | String.Contains(ListItem.FileNameAndPath,REMUX) | String.Contains(ListItem.FileNameAndPath,blu-ray) | String.Contains(ListItem.FileNameAndPath,BluRay) | String.Contains(ListItem.FileNameAndPath,BLURAY) | String.Contains(ListItem.FileNameAndPath,bluray) | String.Contains(ListItem.FileNameAndPath,bdrip) | String.Contains(ListItem.FileNameAndPath,BDRip) | String.Contains(ListItem.FileNameAndPath,brrip) | String.Contains(ListItem.FileNameAndPath,BRRip) | String.Contains(ListItem.FileNameAndPath,bdmv) | String.Contains(ListItem.FileNameAndPath,BDMV) | String.Contains(ListItem.FileNameAndPath,bd66) | String.Contains(ListItem.FileNameAndPath,BD66) | String.Contains(ListItem.FileNameAndPath,bd100) | String.Contains(ListItem.FileNameAndPath,BD100)]]</expression>
+    <expression name="Signde_SourceQuality_1">String.Contains(ListItem.FileNameAndPath,webtv) | String.Contains(ListItem.FileNameAndPath,WEBTV) | String.Contains(ListItem.FileNameAndPath,WebTV) | String.Contains(ListItem.FileNameAndPath,web-tv) | String.Contains(ListItem.FileNameAndPath,WEB-TV) | String.Contains(ListItem.FileNameAndPath,Web-TV)</expression>
+    <expression name="Signde_SourceQuality_2">String.Contains(ListItem.FileNameAndPath,web-dl) | String.Contains(ListItem.FileNameAndPath,WEB-DL) | String.Contains(ListItem.FileNameAndPath,Web-DL) | String.Contains(ListItem.FileNameAndPath,webdl) | String.Contains(ListItem.FileNameAndPath,WEBDL) | String.Contains(ListItem.FileNameAndPath,WebDL) | String.Contains(ListItem.FileNameAndPath,webrip) | String.Contains(ListItem.FileNameAndPath,WEBRip) | String.Contains(ListItem.FileNameAndPath,WEBRIP) | String.Contains(ListItem.FileNameAndPath,web-rip) | String.Contains(ListItem.FileNameAndPath,WEB-RIP)</expression>
+    <expression name="Signde_SourceQuality_3">String.Contains(ListItem.FileNameAndPath,hddvd) | String.Contains(ListItem.FileNameAndPath,HDDVD) | String.Contains(ListItem.FileNameAndPath,HD-DVD) | String.Contains(ListItem.FileNameAndPath,HD DVD)</expression>
+    <expression name="Signde_SourceQuality_4">String.Contains(ListItem.FileNameAndPath,remux) | String.Contains(ListItem.FileNameAndPath,Remux) | String.Contains(ListItem.FileNameAndPath,REMUX) | String.Contains(ListItem.FileNameAndPath,blu-ray) | String.Contains(ListItem.FileNameAndPath,BluRay) | String.Contains(ListItem.FileNameAndPath,BLURAY) | String.Contains(ListItem.FileNameAndPath,bluray) | String.Contains(ListItem.FileNameAndPath,bdrip) | String.Contains(ListItem.FileNameAndPath,BDRip) | String.Contains(ListItem.FileNameAndPath,brrip) | String.Contains(ListItem.FileNameAndPath,BRRip) | String.Contains(ListItem.FileNameAndPath,bd25) | String.Contains(ListItem.FileNameAndPath,BD25) | String.Contains(ListItem.FileNameAndPath,bd50) | String.Contains(ListItem.FileNameAndPath,BD50) | String.Contains(ListItem.FileNameAndPath,bdmv) | String.Contains(ListItem.FileNameAndPath,BDMV)</expression>
+    <expression name="Signde_SourceQuality_5">String.Contains(ListItem.FileNameAndPath,dvd) | String.Contains(ListItem.FileNameAndPath,DVD) | String.Contains(ListItem.FileNameAndPath,.DVD.) | String.Contains(ListItem.FileNameAndPath, DVD ) | String.Contains(ListItem.FileNameAndPath,-DVD) | String.Contains(ListItem.FileNameAndPath,_DVD) | String.EndsWith(ListItem.FileNameAndPath,dvd) | String.EndsWith(ListItem.FileNameAndPath,DVD) | String.EndsWith(ListItem.FileNameAndPath,.ifo) | String.EndsWith(ListItem.FileNameAndPath,.IFO) | String.EndsWith(ListItem.FileNameAndPath,.iso) | String.EndsWith(ListItem.FileNameAndPath,.ISO) | String.Contains(ListItem.FileNameAndPath,dvdrip) | String.Contains(ListItem.FileNameAndPath,DVDRip) | String.Contains(ListItem.FileNameAndPath,DVDRIP)</expression>
+    <expression name="Signde_SourceQuality_6">String.Contains(ListItem.FileNameAndPath,sdtv) | String.Contains(ListItem.FileNameAndPath,SDTV) | String.Contains(ListItem.FileNameAndPath,sd-tv) | String.Contains(ListItem.FileNameAndPath,SD-TV) | String.Contains(ListItem.FileNameAndPath,pdtv) | String.Contains(ListItem.FileNameAndPath,PDTV)</expression>
+    <expression name="Signde_SourceQuality_7">String.Contains(ListItem.FileNameAndPath,hdtv) | String.Contains(ListItem.FileNameAndPath,HDTV) | String.Contains(ListItem.FileNameAndPath,dsr) | String.Contains(ListItem.FileNameAndPath,DSR)</expression>
+
+    <variable name="Image_Furniture_AudioCodec">
+        <value condition="[String.IsEqual(ListItem.AudioCodec,truehd) | String.IsEqual(ListItem.AudioCodec,eac3)] + [String.Contains(ListItem.FileNameAndPath,Atmos) | String.Contains(ListItem.FileNameAndPath,.Atmos.)]">resource://resource.images.mediaflags.signde/color/audio/atmos.png</value>
+        <value condition="String.Contains(ListItem.AudioCodec,atmos)">resource://resource.images.mediaflags.signde/color/audio/atmos.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,truehd_atmos) | String.IsEqual(ListItem.AudioCodec,eac3_ddp_atmos)">resource://resource.images.mediaflags.signde/color/audio/atmos.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,dtshd_ma_x_imax) | [[String.IsEqual(ListItem.AudioCodec,dtshd) | String.IsEqual(ListItem.AudioCodec,dtshd_ma) | String.IsEqual(ListItem.AudioCodec,dtshd_ma_x) | String.IsEqual(ListItem.AudioCodec,dtsx) | String.IsEqual(ListItem.AudioCodec,dts_x)] + [String.Contains(ListItem.FileNameAndPath,DTS-X) | String.Contains(ListItem.FileNameAndPath,DTSX) | String.Contains(ListItem.FileNameAndPath,DTS:X)] + String.Contains(ListItem.FileNameAndPath,IMAX)]">resource://resource.images.mediaflags.signde/color/audio/dtshd_ma_x_imax.png</value>
+        <value condition="[String.IsEqual(ListItem.AudioCodec,dtshd) | String.IsEqual(ListItem.AudioCodec,dtshd_ma)] + [String.Contains(ListItem.FileNameAndPath,DTS-X) | String.Contains(ListItem.FileNameAndPath,DTSX) | String.Contains(ListItem.FileNameAndPath,DTS:X)]">resource://resource.images.mediaflags.signde/color/audio/dtsx.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,dtshd_ma_x) | String.IsEqual(ListItem.AudioCodec,dtsx) | String.IsEqual(ListItem.AudioCodec,dts_x)">resource://resource.images.mediaflags.signde/color/audio/dtsx.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,aif) | String.IsEqual(ListItem.AudioCodec,aifc)">resource://resource.images.mediaflags.signde/color/audio/aiff.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,dtsma)">resource://resource.images.mediaflags.signde/color/audio/dtshd_ma.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,mp3float)">resource://resource.images.mediaflags.signde/color/audio/mp3.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,ogg)">resource://resource.images.mediaflags.signde/color/audio/vorbis.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,pcm_bluray)">resource://resource.images.mediaflags.signde/color/audio/pcm.png</value>
+        <value condition="String.IsEqual(ListItem.AudioCodec,wavpack)">resource://resource.images.mediaflags.signde/color/audio/wv.png</value>
+        <value>$INFO[ListItem.AudioCodec,resource://resource.images.mediaflags.signde/color/audio/,.png]</value>
+    </variable>
+
+    <variable name="Image_Furniture_HDRType">
+        <value condition="$EXP[Signde_HDRType_0]">resource://resource.images.mediaflags.signde/color/hdr/dolbyvision.png</value>
+        <value condition="$EXP[Signde_HDRType_1]">resource://resource.images.mediaflags.signde/color/hdr/hdr10plus.png</value>
+        <value>$INFO[ListItem.HdrType,resource://resource.images.mediaflags.signde/color/hdr/,.png]</value>
+    </variable>
+
+    <variable name="Image_Furniture_VideoCodec">
+        <value condition="String.IsEqual(ListItem.VideoCodec,av1)">resource://resource.images.mediaflags.signde/color/source/av1.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,hev1)">resource://resource.images.mediaflags.signde/color/source/hevc.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,mpeg1)">resource://resource.images.mediaflags.signde/color/source/mpeg1video.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,mpeg2)">resource://resource.images.mediaflags.signde/color/source/mpeg2video.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,vc-1)">resource://resource.images.mediaflags.signde/color/source/vc1.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,vp8)">resource://resource.images.mediaflags.signde/color/source/vp8.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,vp9) | String.IsEqual(ListItem.VideoCodec,vp9.2) | String.IsEqual(ListItem.VideoCodec,vp09)">resource://resource.images.mediaflags.signde/color/source/vp9.png</value>
+        <value condition="String.IsEqual(ListItem.VideoCodec,wmv)">resource://resource.images.mediaflags.signde/color/source/wmv3.png</value>
+        <value>$INFO[ListItem.VideoCodec,resource://resource.images.mediaflags.signde/color/source/,.png]</value>
+    </variable>
+
+    <variable name="Image_Furniture_SourceQuality">
+        <value condition="$EXP[Signde_SourceQuality_0]">resource://resource.images.mediaflags.signde/color/source/ultrahd.png</value>
+        <value condition="$EXP[Signde_SourceQuality_1]">resource://resource.images.mediaflags.signde/color/source/webtv.png</value>
+        <value condition="$EXP[Signde_SourceQuality_2]">resource://resource.images.mediaflags.signde/color/source/web-dl.png</value>
+        <value condition="$EXP[Signde_SourceQuality_3]">resource://resource.images.mediaflags.signde/color/source/hddvd.png</value>
+        <value condition="$EXP[Signde_SourceQuality_4]">resource://resource.images.mediaflags.signde/color/source/bluray.png</value>
+        <value condition="$EXP[Signde_SourceQuality_5]">resource://resource.images.mediaflags.signde/color/source/dvd.png</value>
+        <value condition="$EXP[Signde_SourceQuality_6]">resource://resource.images.mediaflags.signde/color/source/sdtv.png</value>
+        <value condition="$EXP[Signde_SourceQuality_7]">resource://resource.images.mediaflags.signde/color/source/hdtv.png</value>
+    </variable>
+
+    <include name="Furniture_SigndeCodecs">
+        <param name="colordiffuse">white</param>
+        <param name="visible">!Player.HasMedia | Skin.HasSetting(Footer.DisableNowPlaying)</param>
+        <param name="show_studio">!Skin.HasSetting(Footer.DisableStudio)</param>
+        <param name="show_sourcequality">true</param>
+        <param name="image_hdrtype">$VAR[Image_Furniture_HDRType]</param>
+        <param name="image_videocodec">$VAR[Image_Furniture_VideoCodec]</param>
+        <param name="image_audiocodec">$VAR[Image_Furniture_AudioCodec]</param>
+        <param name="infolabel_videoresolution">ListItem.VideoResolution</param>
+        <param name="infolabel_hdrtype">ListItem.HdrType</param>
+        <param name="infolabel_videoaspect">ListItem.VideoAspect</param>
+        <param name="infolabel_videocodec">ListItem.VideoCodec</param>
+        <param name="infolabel_audiocodec">ListItem.AudioCodec</param>
+        <param name="infolabel_audiochannels">ListItem.AudioChannels</param>
+        <param name="align">right</param>
+        <param name="itemgap">20</param>
+        <param name="mediaflag_width">85</param>
+        <param name="mediaflag_height">58</param>
+        <definition>
+            <control type="grouplist">
+                <visible>$PARAM[visible]</visible>
+                <visible>!String.IsEmpty($PARAM[infolabel_videoresolution])</visible>
+                <orientation>horizontal</orientation>
+                <align>$PARAM[align]</align>
+                <itemgap>$PARAM[itemgap]</itemgap>
+                <control type="image">
+                    <width>300</width>
+                    <height>48</height>
+                    <aspectratio align="right">keep</aspectratio>
+                    <texture background="true">$VAR[Image_CombinedStudio]</texture>
+                    <centertop>50%</centertop>
+                    <visible>$PARAM[show_studio]</visible>
+                </control>
+                <control type="image">
+                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">$PARAM[image_hdrtype]</texture>
+                    <aspectratio>keep</aspectratio>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
+                    <centertop>50%</centertop>
+                    <visible>[$EXP[Signde_HDRType_0]] | [$EXP[Signde_HDRType_1]] | [String.IsEqual(ListItem.HdrType,dolbyvision)] | [String.IsEqual(ListItem.HdrType,hdr10)] | [String.IsEqual(ListItem.HdrType,hdr10plus)] | [String.IsEqual(ListItem.HdrType,hlg)]</visible>
+                </control>
+                <control type="image">
+                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">$VAR[Image_Furniture_SourceQuality]</texture>
+                    <aspectratio>keep</aspectratio>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
+                    <centertop>50%</centertop>
+                    <visible>$PARAM[show_sourcequality] + [[$EXP[Signde_SourceQuality_0]] | [$EXP[Signde_SourceQuality_1]] | [$EXP[Signde_SourceQuality_2]] | [$EXP[Signde_SourceQuality_3]] | [$EXP[Signde_SourceQuality_4]] | [$EXP[Signde_SourceQuality_5]] | [$EXP[Signde_SourceQuality_6]] | [$EXP[Signde_SourceQuality_7]]]</visible>
+                </control>
+                <control type="image">
+                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">$INFO[$PARAM[infolabel_videoresolution],resource://resource.images.mediaflags.signde/color/resolution/,.png]</texture>
+                    <aspectratio>keep</aspectratio>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
+                    <centertop>50%</centertop>
+                    <visible>!String.IsEmpty($PARAM[infolabel_videoresolution])</visible>
+                </control>
+                <control type="image">
+                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">$INFO[$PARAM[infolabel_videoaspect],resource://resource.images.mediaflags.signde/color/aspectratio/,.png]</texture>
+                    <aspectratio>keep</aspectratio>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
+                    <centertop>50%</centertop>
+                    <visible>!String.IsEmpty($PARAM[infolabel_videoaspect])</visible>
+                </control>
+                <control type="image">
+                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">$PARAM[image_videocodec]</texture>
+                    <aspectratio>keep</aspectratio>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
+                    <centertop>50%</centertop>
+                    <visible>!String.IsEmpty($PARAM[infolabel_videocodec])</visible>
+                </control>
+                <control type="image">
+                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">$PARAM[image_audiocodec]</texture>
+                    <aspectratio>keep</aspectratio>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
+                    <centertop>50%</centertop>
+                    <visible>!String.IsEmpty($PARAM[infolabel_audiocodec])</visible>
+                </control>
+                <control type="image">
+                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">resource://resource.images.mediaflags.signde/color/channels/5.1.4.png</texture>
+                    <aspectratio>keep</aspectratio>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
+                    <centertop>50%</centertop>
+                    <visible>Integer.IsEqual($PARAM[infolabel_audiochannels],6) + [String.IsEqual($PARAM[infolabel_audiocodec],eac3_ddp_atmos) | [String.IsEqual($PARAM[infolabel_audiocodec],eac3) + [String.Contains(ListItem.FileNameAndPath,Atmos) | String.Contains(ListItem.FileNameAndPath,.Atmos.)]]]</visible>
+                </control>
+                <control type="image">
+                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">resource://resource.images.mediaflags.signde/color/channels/7.1.4.png</texture>
+                    <aspectratio>keep</aspectratio>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
+                    <centertop>50%</centertop>
+                    <visible>Integer.IsEqual($PARAM[infolabel_audiochannels],8) + [String.IsEqual($PARAM[infolabel_audiocodec],truehd_atmos) | [String.IsEqual($PARAM[infolabel_audiocodec],truehd) + [String.Contains(ListItem.FileNameAndPath,Atmos) | String.Contains(ListItem.FileNameAndPath,.Atmos.)]] | String.IsEqual($PARAM[infolabel_audiocodec],dtshd_ma_x) | String.IsEqual($PARAM[infolabel_audiocodec],dtshd_ma_x_imax) | String.IsEqual($PARAM[infolabel_audiocodec],dtsx) | String.IsEqual($PARAM[infolabel_audiocodec],dts_x) | [[String.IsEqual($PARAM[infolabel_audiocodec],dtshd) | String.IsEqual($PARAM[infolabel_audiocodec],dtshd_ma)] + [String.Contains(ListItem.FileNameAndPath,DTS-X) | String.Contains(ListItem.FileNameAndPath,DTSX) | String.Contains(ListItem.FileNameAndPath,DTS:X)]]]</visible>
+                </control>
+                <control type="image">
+                    <texture background="true" colordiffuse="$PARAM[colordiffuse]">$INFO[$PARAM[infolabel_audiochannels],resource://resource.images.mediaflags.signde/color/channels/,.png]</texture>
+                    <aspectratio>keep</aspectratio>
+                    <height>$PARAM[mediaflag_height]</height>
+                    <width>$PARAM[mediaflag_width]</width>
+                    <centertop>50%</centertop>
+                    <visible>!String.IsEmpty($PARAM[infolabel_audiochannels])</visible>
+                    <visible>![Integer.IsEqual($PARAM[infolabel_audiochannels],6) + [String.IsEqual($PARAM[infolabel_audiocodec],eac3_ddp_atmos) | [String.IsEqual($PARAM[infolabel_audiocodec],eac3) + [String.Contains(ListItem.FileNameAndPath,Atmos) | String.Contains(ListItem.FileNameAndPath,.Atmos.)]]]]</visible>
+                    <visible>![Integer.IsEqual($PARAM[infolabel_audiochannels],8) + [String.IsEqual($PARAM[infolabel_audiocodec],truehd_atmos) | [String.IsEqual($PARAM[infolabel_audiocodec],truehd) + [String.Contains(ListItem.FileNameAndPath,Atmos) | String.Contains(ListItem.FileNameAndPath,.Atmos.)]] | String.IsEqual($PARAM[infolabel_audiocodec],dtshd_ma_x) | String.IsEqual($PARAM[infolabel_audiocodec],dtshd_ma_x_imax) | String.IsEqual($PARAM[infolabel_audiocodec],dtsx) | String.IsEqual($PARAM[infolabel_audiocodec],dts_x) | [[String.IsEqual($PARAM[infolabel_audiocodec],dtshd) | String.IsEqual($PARAM[infolabel_audiocodec],dtshd_ma)] + [String.Contains(ListItem.FileNameAndPath,DTS-X) | String.Contains(ListItem.FileNameAndPath,DTSX) | String.Contains(ListItem.FileNameAndPath,DTS:X)]]]]</visible>
+                </control>
+            </control>
+        </definition>
+    </include>
+</includes>

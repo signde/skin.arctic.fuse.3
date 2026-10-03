@@ -81,7 +81,7 @@
                             <top>-5</top>
                             <include condition="!Skin.HasSetting(Footer.DisableStudio)">Furniture_Studio</include>
                             <include condition="!Skin.HasSetting(Footer.DisableNowPlaying)">Furniture_Player</include>
-                            <include condition="Skin.HasSetting(Footer.EnableCodecs)">Furniture_Codecs</include>
+                            <include condition="Skin.HasSetting(Footer.EnableCodecs)">Furniture_SigndeCodecs</include>
                         </control>
                     </control>
                 </control>
@@ -140,7 +140,7 @@
             <itemgap>20</itemgap>
             <include>Furniture_SlidesOver</include>
             <visible>!Player.HasMedia | Skin.HasSetting(Footer.DisableNowPlaying)</visible>
-            <visible>String.IsEmpty(ListItem.VideoCodec) | !Skin.HasSetting(Footer.EnableCodecs)</visible>
+            <visible>String.IsEmpty(ListItem.VideoResolution) | !Skin.HasSetting(Footer.EnableCodecs)</visible>
             <control type="image">
                 <width>300</width>
                 <height>80</height>
