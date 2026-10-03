@@ -276,6 +276,17 @@
             <param name="id">003</param>
             <label>$LOCALIZE[31239]</label>
         </include>
+        <include content="Settings_Button" description="Codecs">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">090</param>
+            <param name="dialog">false</param>
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31207]</label>
+            <onclick>Skin.ToggleSetting(Footer.EnableCodecs)</onclick>
+            <selected>Skin.HasSetting(Footer.EnableCodecs)</selected>
+        </include>
         <include content="Settings_Button" description="Now playing">
             <param name="help">$LOCALIZE[31676]</param>
             <param name="window">skinsettings</param>
